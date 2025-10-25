@@ -116,15 +116,11 @@ Example:
 ![TypeScript](images/typescript.png)
 ```
 
-## Troubleshooting
+## Credits
 
-- Colors don’t look semantic in TS/JS/C#:
-  - Make sure “Semantic Highlighting” is enabled.
-  - Confirm the corresponding language extension is installed and active.
-- Inspect which scopes/tokens are applied:
-  - Command Palette → “Developer: Inspect Editor Tokens and Scopes”.
-- Terminal looks off on Windows:
-  - Try `"terminal.integrated.gpuAcceleration": "off"` or adjust font to `"Cascadia Mono"`.
+This extension is inspired by and builds upon the original Relaxed Theme. Many thanks to the [Relaxed](https://marketplace.visualstudio.com/items?itemName=mischah.relaxed-theme) Theme authors and contributors for the foundational palette and design ideas.
+
+If you maintain or know the canonical link for the Relaxed Theme you’d like credited, feel free to open a PR to add it here.
 
 ## Contributing
 
