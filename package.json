@@ -25,15 +25,54 @@
   "keywords": [
     "VSCode",
     "Themes",
-    "Relaxed"
+    "Relaxed",
+    "theme",
+    "dark theme",
+    "light theme",
+    "semantic highlighting",
+    "typescript",
+    "javascript",
+    "python",
+    "csharp",
+    ".net",
+    "low eye strain",
+    "accessibility"
   ],
+  "galleryBanner": {
+    "color": "#2b2f34",
+    "theme": "dark"
+  },
   "contributes": {
     "themes": [
       {
-        "label": "Relaxed Theme - Semantic Focus",
+        "label": "Relaxed Theme - Dark Focus (Semantic)",
         "uiTheme": "vs-dark",
-        "path": "./themes/relaxed-theme-semantic-focus-color-theme.json"
+        "path": "./themes/relaxed-theme-semantic-dark-focus.json"
+      },
+      {
+        "label": "Relaxed Theme - Night Warm (Semantic)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/relaxed-theme-semantic-night-warm.json"
+      },
+      {
+        "label": "Relaxed Theme - Day Light (Semantic)",
+        "uiTheme": "vs",
+        "path": "./themes/relaxed-theme-semantic-day-light.json"
       }
+    ],
+    "configurationDefaults": {
+      "window.autoDetectColorScheme": true,
+      "workbench.preferredDarkColorTheme": "Relaxed Theme - Dark Focus (Semantic)",
+      "workbench.preferredLightColorTheme": "Relaxed Theme - Day Light (Semantic)",
+      "editor.semanticHighlighting.enabled": true
+    },
+    "devDependencies": {
+      "sharp": "^0.33.0",
+      "vsce": "^2.15.0"
+    },
+    "license": "MIT",
+    "extensionKind": [
+      "ui"
     ]
   }
 }
