@@ -3,11 +3,29 @@
   "displayName": "Relaxed Theme - Semantic Focus",
   "description": "A calm, readable dark theme for Visual Studio Code with first‑class semantic highlighting. Tuned for TypeScript/JavaScript and C# (.NET)",
   "version": "0.0.1",
+  "publisher": "nomad-in-code",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaluvadis/relax-theme-semantic-focus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chaluvadis/relax-theme-semantic-focus/issues"
+  },
+  "homepage": "https://github.com/chaluvadis/relax-theme-semantic-focus#readme",
   "engines": {
     "vscode": "^1.105.0"
   },
+  "scripts": {
+    "publish": "vsce publish"
+  },
   "categories": [
     "Themes"
+  ],
+  "keywords": [
+    "VSCode",
+    "Themes",
+    "Relaxed"
   ],
   "contributes": {
     "themes": [
