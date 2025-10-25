@@ -19,6 +19,11 @@
   "scripts": {
     "publish": "vsce publish"
   },
+  "devDependencies": {
+    "@types/vscode": "^1.105.0",
+    "typescript": "^5.9.3",
+    "@vscode/vsce": "^3.6.2"
+  },
   "categories": [
     "Themes"
   ],
