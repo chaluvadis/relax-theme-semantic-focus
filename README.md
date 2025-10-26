@@ -61,60 +61,30 @@ These work on macOS and Windows by prioritizing available fonts on each OS.
   "editor.smoothScrolling": true,
   "editor.renderWhitespace": "boundary",
   "editor.guides.bracketPairs": true,
-  "editor.guides.bracketPairsHorizontal": true,
-  "editor.stickyScroll.enabled": true,
-  "editor.inlayHints.enabled": "on",
-  "terminal.integrated.fontFamily": "SF Mono, 'Cascadia Mono', Menlo, Monaco, Consolas, 'Courier New', monospace",
-  "terminal.integrated.minimumContrastRatio": 4.5,
-  "terminal.integrated.drawBoldTextInBrightColors": false,
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.profiles.osx": {
-    "zsh": { "path": "/bin/zsh" },
-    "bash": { "path": "/bin/bash" }
-  },
-  "terminal.integrated.macOptionIsMeta": true,
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": { "source": "PowerShell" },
-    "Command Prompt": { "source": "Command Prompt" },
-    "Git Bash": { "path": "C:\\\\Program Files\\\\Git\\\\bin\\\\bash.exe" }
-  }
+  "editor.guides.bracketPairsHorizontal": true
 }
 ```
-
-Tip: If you want different window title bars per OS (native on macOS, custom on Windows), use [Settings Profiles](https://code.visualstudio.com/docs/editor/profiles) and set `window.titleBarStyle` differently in each profile.
-
 ## Language coverage (highlights)
 
 - TypeScript / JavaScript / JSX / TSX
   - Functions/methods, parameters, properties, classes, interfaces, enums, decorators, type annotations
 - C# (.NET)
   - Methods, parameters, classes/structs/interfaces/enums, attributes, namespaces, keywords
-
-## UI polish included
-
-- Find/replace and selection highlights
-- Peek view styling with match highlights
-- Hover and linked editing background
-- Bracket pair colors and guides (active + background)
-- Inlay hints (type/parameter) with subtle backgrounds
-- Breadcrumbs and sticky scroll background/borders
-- Tab hover, modified indicators, and minimap improvements
-- Git gutter and minimap colors for added/changed/removed
-
 ## Screenshots
-
 Place your screenshots in `images/` and reference them here:
-
 - Editor (TypeScript)
 - Editor (C#)
 - Search/Peek/Bracket Guides
 
 Example:
+**Dark Focus**
+![Dark Theme](images/relaxed-theme-dark.png)
 
-```
-![TypeScript](images/typescript.png)
-```
+**Night Warm**
+![Night Warm](images/relaxed-theme-night.png)
+
+**Day Light**
+![Night Warm](images/relaxed-theme-light.png)
 
 ## Credits
 
