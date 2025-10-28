@@ -566,6 +566,15 @@
             }
         },
         {
+            "name": "[C#] Primary Constructor Parameters",
+            "scope": [
+                "source.cs variable.parameter.primary-constructor"
+            ],
+            "settings": {
+                "foreground": "#e5c287"
+            }
+        },
+        {
             "name": "[C#] Classes, Structs, Interfaces, Enums",
             "scope": [
                 "source.cs entity.name.type",
