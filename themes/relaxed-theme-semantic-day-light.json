@@ -178,7 +178,7 @@
             "fontStyle": "italic"
         },
         "parameter": "#556c82",
-        "parameter.readonly": "#7a5f22",
+        "parameter.readonly": "#9a7f42",
         "variable": "#2a2f37",
         "variable.readonly": "#7a5f22",
         "variable.constant": "#7a5f22",
@@ -201,7 +201,10 @@
         "escape": "#3f5f8f",
         "number": "#7a5f22",
         "boolean": "#b03e34",
-        "typeAlias": "#8b6f2e"
+        "typeAlias": "#8b6f2e",
+        "namespace": "#2f6d86",
+        "struct": "#8b6f2e",
+        "modifier": "#7a4f7f"
     },
     "tokenColors": [
         {
