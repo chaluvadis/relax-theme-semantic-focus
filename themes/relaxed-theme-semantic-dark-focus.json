@@ -166,7 +166,7 @@
         "*.declaration": {
             "fontStyle": "bold"
         },
-        "property": "#b9d3ea",
+        "property": "#c9dfff",
         "property.readonly": "#dfc39a",
         "type": "#d7c27e",
         "class": "#d7c27e",
@@ -177,8 +177,8 @@
             "foreground": "#b9d3ea",
             "fontStyle": "italic"
         },
-        "parameter": "#b9d3ea",
-        "parameter.readonly": "#dfc39a",
+        "parameter": "#b8c8d8",
+        "parameter.readonly": "#ecd3a8",
         "variable": "#dde1e6",
         "variable.readonly": "#dfc39a",
         "variable.constant": "#dfc39a",
@@ -201,7 +201,10 @@
         "escape": "#b9d3ea",
         "number": "#dfc39a",
         "boolean": "#c4776f",
-        "typeAlias": "#d7c27e"
+        "typeAlias": "#d7c27e",
+        "namespace": "#8aa0b3",
+        "struct": "#d7c27e",
+        "modifier": "#a47aa7"
     },
     "tokenColors": [
         {
