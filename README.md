@@ -2,6 +2,10 @@
 
 A calm, readable dark theme for Visual Studio Code with first‑class semantic highlighting. Tuned for TypeScript/JavaScript, C# (.NET) with clear differentiation of keywords, functions, parameters, properties, and types. Includes thoughtful UI polish for search, peek, brackets, inlay hints, breadcrumbs, tabs, and minimap.
 
+## Installation
+
+Install from the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=nomad-in-code.relaxed-theme-semantic-focus).
+
 - Consistent accent color and accessible contrast
 - Rich semantic token colors for TS/JS/JSX/TSX, C#
 - Works great on macOS and Windows
@@ -10,7 +14,7 @@ A calm, readable dark theme for Visual Studio Code with first‑class semantic h
 ## Features
 
 - Language semantics
-  - Strong separation of functions/methods, parameters, properties/fields, classes/types/interfaces, enums and members
+  - Strong separation of functions/methods, parameters, properties/fields, classes/types/interfaces, enums, members, namespaces, structs, and modifiers
   - Semantic token support: namespaces, modules, readonly, static, default library, decorators/attributes, etc.
 - UI polish
   - Find/Replace and Peek highlights
@@ -34,7 +38,10 @@ A calm, readable dark theme for Visual Studio Code with first‑class semantic h
 | Keyword / Macro | `#b06698` |
 | Number / Enum member | `#ecd3a8` |
 | Type / Class / Interface | `#e7c380` |
+| Function / Method | `#85a7bf` |
 | Property / Member | `#c9dfff` |
+| Interface | `#b8c8d8` |
+| Namespace | `#8aa0b3` |
 | Error / Deleted | `#d1635e` |
 
 ## Enable semantic highlighting
@@ -67,9 +74,9 @@ These work on macOS and Windows by prioritizing available fonts on each OS.
 ## Language coverage (highlights)
 
 - TypeScript / JavaScript / JSX / TSX
-  - Functions/methods, parameters, properties, classes, interfaces, enums, decorators, type annotations
+  - Functions/methods, parameters, properties, classes, interfaces, enums, decorators, type annotations, namespaces, structs, modifiers
 - C# (.NET)
-  - Methods, parameters, classes/structs/interfaces/enums, attributes, namespaces, keywords
+  - Methods, parameters, classes/structs/interfaces/enums, attributes, namespaces, keywords, modifiers
 ## Screenshots
 Place your screenshots in `images/` and reference them here:
 - Editor (TypeScript)
@@ -78,13 +85,13 @@ Place your screenshots in `images/` and reference them here:
 
 Example:
 **Dark Focus**
-![Dark Theme](images/relaxed-theme-dark.png)
+![Dark Theme](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/relaxed-theme-dark.png)
 
 **Night Warm**
-![Night Warm](images/relaxed-theme-night.png)
+![Night Warm](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/relaxed-theme-night.png)
 
 **Day Light**
-![Night Warm](images/relaxed-theme-light.png)
+![Night Warm](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/relaxed-theme-light.png)
 
 ## Credits
 
@@ -101,6 +108,6 @@ If you maintain or know the canonical link for the Relaxed Theme you’d like cr
 
 ## License
 
-See [LICENSE](./LICENSE).
+See [LICENSE](https://github.com/chaluvadis/relax-theme-semantic-focus/blob/HEAD/LICENSE).
 ---
 Enjoy coding with a calm, consistent, and semantic‑rich theme.
