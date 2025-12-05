@@ -5,7 +5,7 @@
   "colors": {
     "editor.background": "#2b2f34",
     "editor.foreground": "#dde1e6",
-    "editorGroupHeader.tabsBackground": "#272b2f",
+    "editorGroupHeader.tabsBackground": "#282c31",
     "editor.lineHighlightBackground": "#3a404a",
     "editor.selectionBackground": "#5b6374",
     "editor.selectionHighlightBackground": "#5b637455",
@@ -20,13 +20,13 @@
     "widget.shadow": "#00000070",
     "focusBorder": "#7e8f9c",
     "titleBar.activeBackground": "#272b2f",
-    "activityBar.background": "#24282d",
+    "activityBar.background": "#23272c",
     "activityBarBadge.background": "#7e8f9c",
     "sideBarTitle.foreground": "#dde1e6",
-    "sideBar.background": "#282c31",
+    "sideBar.background": "#25292e",
     "sideBar.border": "#363b42",
     "sideBarSectionHeader.background": "#30353b",
-    "tab.inactiveBackground": "#24282d",
+    "tab.inactiveBackground": "#25292e",
     "tab.activeBorder": "#7e8f9c",
     "scrollbar.shadow": "#3a4046",
     "scrollbarSlider.activeBackground": "#7e8f9c",
@@ -156,17 +156,26 @@
     },
     "keyword": "#a47aa7",
     "string": "#8fae6b",
-    "function": "#85a7bf",
-    "function.declaration": "#9ab4c6",
-    "method": "#9ab4c6",
+    "function": {
+      "foreground": "#85a7bf",
+      "fontStyle": "bold"
+    },
+    "function.declaration": "#85a7bf",
+    "method": {
+      "foreground": "#85a7bf",
+      "fontStyle": "bold"
+    },
     "method.declaration": "#9ab4c6",
     "property": "#b9d3ea",
-    "property.readonly": "#dfc39a",
+    "property.readonly": "#e4a85c",
     "type": "#d7c27e",
-    "class": "#d7c27e",
+    "class": {
+      "foreground": "#d7c27e",
+      "fontStyle": "bold"
+    },
     "interface": "#b8c8d8",
     "enum": "#d7c27e",
-    "enumMember": "#e4ad5c",
+    "enumMember": "#e8b85f",
     "typeParameter": {
       "foreground": "#b9d3ea",
       "fontStyle": "italic"
@@ -174,8 +183,8 @@
     "parameter": "#b8c8d8",
     "parameter.readonly": "#ecd3a8",
     "variable": "#dde1e6",
-    "variable.readonly": "#dfc39a",
-    "variable.constant": "#dfc39a",
+    "variable.readonly": "#e4a85c",
+    "variable.constant": "#b8854a",
     "variable.global": "#dde1e6",
     "variable.defaultLibrary": {
       "foreground": "#b9d3ea",
@@ -193,7 +202,7 @@
     "string.regexp": "#b9d3ea",
     "formatSpecifier": "#b9d3ea",
     "escape": "#b9d3ea",
-    "number": "#dfc39a",
+    "number": "#e4a85c",
     "boolean": "#c4776f",
     "typeAlias": "#d7c27e",
     "namespace": "#8aa0b3",
@@ -203,7 +212,10 @@
   "tokenColors": [
     {
       "name": "Comment",
-      "scope": ["comment", "punctuation.definition.comment"],
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#8a9098"
@@ -224,7 +236,11 @@
     },
     {
       "name": "Strings",
-      "scope": ["string", "string.quoted", "string.template"],
+      "scope": [
+        "string",
+        "string.quoted",
+        "string.template"
+      ],
       "settings": {
         "foreground": "#8fae6b"
       }
@@ -238,19 +254,25 @@
         "support.constant"
       ],
       "settings": {
-        "foreground": "#dfc39a"
+        "foreground": "#b8854a"
       }
     },
     {
       "name": "Regexp & Escape",
-      "scope": ["string.regexp", "constant.character.escape"],
+      "scope": [
+        "string.regexp",
+        "constant.character.escape"
+      ],
       "settings": {
         "foreground": "#b9d3ea"
       }
     },
     {
       "name": "Invalid",
-      "scope": ["invalid", "invalid.illegal"],
+      "scope": [
+        "invalid",
+        "invalid.illegal"
+      ],
       "settings": {
         "foreground": "#c4776f"
       }
@@ -278,6 +300,7 @@
         "support.function"
       ],
       "settings": {
+        "fontStyle": "bold",
         "foreground": "#85a7bf"
       }
     },
@@ -294,9 +317,12 @@
     },
     {
       "name": "Parameters",
-      "scope": ["variable.parameter", "meta.parameter"],
+      "scope": [
+        "variable.parameter",
+        "meta.parameter"
+      ],
       "settings": {
-        "foreground": "#b9d3ea"
+        "foreground": "#b8c8d8"
       }
     },
     {
@@ -309,12 +335,16 @@
         "support.type.sys-types"
       ],
       "settings": {
+        "fontStyle": "bold",
         "foreground": "#d7c27e"
       }
     },
     {
       "name": "Interfaces",
-      "scope": ["entity.name.type.interface", "support.type.interface"],
+      "scope": [
+        "entity.name.type.interface",
+        "support.type.interface"
+      ],
       "settings": {
         "foreground": "#b8c8d8"
       }
@@ -327,7 +357,7 @@
         "constant.other.enummember"
       ],
       "settings": {
-        "foreground": "#dfc39a"
+        "foreground": "#e8b85f"
       }
     },
     {
@@ -400,7 +430,7 @@
         "source.jsx variable.parameter"
       ],
       "settings": {
-        "foreground": "#b9d3ea"
+        "foreground": "#b8c8d8"
       }
     },
     {
@@ -494,7 +524,10 @@
     },
     {
       "name": "[TS/JS] Decorators",
-      "scope": ["source.ts meta.decorator", "source.tsx meta.decorator"],
+      "scope": [
+        "source.ts meta.decorator",
+        "source.tsx meta.decorator"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#85a7bf"
@@ -518,7 +551,7 @@
         "source.python variable.parameter"
       ],
       "settings": {
-        "foreground": "#b9d3ea"
+        "foreground": "#b8c8d8"
       }
     },
     {
@@ -545,7 +578,9 @@
     },
     {
       "name": "[Python] self",
-      "scope": ["source.python variable.language.self"],
+      "scope": [
+        "source.python variable.language.self"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#c4776f"
@@ -564,16 +599,21 @@
     },
     {
       "name": "[C#] Parameters",
-      "scope": ["source.cs variable.parameter", "source.cs meta.parameter"],
+      "scope": [
+        "source.cs variable.parameter",
+        "source.cs meta.parameter"
+      ],
       "settings": {
-        "foreground": "#b9d3ea"
+        "foreground": "#b8c8d8"
       }
     },
     {
       "name": "[C#] Primary Constructor Parameters",
-      "scope": ["source.cs variable.parameter.primary-constructor"],
+      "scope": [
+        "source.cs variable.parameter.primary-constructor"
+      ],
       "settings": {
-        "foreground": "#e5c287"
+        "foreground": "#e9c28a"
       }
     },
     {
@@ -603,7 +643,10 @@
     },
     {
       "name": "[C#] Attributes (Annotations)",
-      "scope": ["source.cs meta.attribute", "source.cs entity.name.attribute"],
+      "scope": [
+        "source.cs meta.attribute",
+        "source.cs entity.name.attribute"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#85a7bf"
@@ -611,21 +654,27 @@
     },
     {
       "name": "[C#] Access Modifiers",
-      "scope": ["source.cs keyword.other.access-modifier"],
+      "scope": [
+        "source.cs keyword.other.access-modifier"
+      ],
       "settings": {
         "foreground": "#9a7aa7"
       }
     },
     {
       "name": "[C#] Record Keyword",
-      "scope": ["source.cs keyword.other.record"],
+      "scope": [
+        "source.cs keyword.other.record"
+      ],
       "settings": {
         "foreground": "#b47aa7"
       }
     },
     {
       "name": "[C#] Async Keyword",
-      "scope": ["source.cs keyword.other.async"],
+      "scope": [
+        "source.cs keyword.other.async"
+      ],
       "settings": {
         "foreground": "#a47aa7",
         "fontStyle": "italic"
@@ -633,7 +682,9 @@
     },
     {
       "name": "[C#] Static Modifier",
-      "scope": ["source.cs storage.modifier.static"],
+      "scope": [
+        "source.cs storage.modifier.static"
+      ],
       "settings": {
         "foreground": "#a47aa7",
         "fontStyle": "bold"
@@ -641,7 +692,9 @@
     },
     {
       "name": "[C#] LINQ Keywords",
-      "scope": ["source.cs keyword.other.linq"],
+      "scope": [
+        "source.cs keyword.other.linq"
+      ],
       "settings": {
         "foreground": "#a47aa7",
         "fontStyle": "underline"
@@ -649,7 +702,9 @@
     },
     {
       "name": "[C#] Pattern Matching Keywords",
-      "scope": ["source.cs keyword.other.pattern"],
+      "scope": [
+        "source.cs keyword.other.pattern"
+      ],
       "settings": {
         "foreground": "#a47aa7",
         "fontStyle": "bold"
@@ -668,14 +723,18 @@
     },
     {
       "name": "JSON Keys",
-      "scope": ["source.json support.type.property-name.json"],
+      "scope": [
+        "source.json support.type.property-name.json"
+      ],
       "settings": {
         "foreground": "#d7c27e"
       }
     },
     {
       "name": "JSON Strings",
-      "scope": ["source.json string.quoted.double.json"],
+      "scope": [
+        "source.json string.quoted.double.json"
+      ],
       "settings": {
         "foreground": "#b9d3ea"
       }
