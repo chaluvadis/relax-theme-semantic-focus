@@ -5,7 +5,7 @@
   "colors": {
     "editor.background": "#f3f4f6",
     "editor.foreground": "#2a2f37",
-    "editorGroupHeader.tabsBackground": "#eef0f3",
+    "editorGroupHeader.tabsBackground": "#f0f2f5",
     "editor.lineHighlightBackground": "#e6e8ec",
     "editor.selectionBackground": "#ccd3dd",
     "editor.selectionHighlightBackground": "#ccd3dd66",
@@ -23,16 +23,16 @@
     "activityBar.background": "#e9ebef",
     "activityBarBadge.background": "#4b6b7d",
     "sideBarTitle.foreground": "#2a2f37",
-    "sideBar.background": "#eceef2",
+    "sideBar.background": "#eaecf0",
     "sideBar.border": "#d9dee5",
     "sideBarSectionHeader.background": "#eef0f3",
-    "tab.inactiveBackground": "#e9ebef",
+    "tab.inactiveBackground": "#edf1f5",
     "tab.activeBorder": "#4b6b7d",
     "scrollbar.shadow": "#cfd5dc",
     "scrollbarSlider.activeBackground": "#4b6b7d",
     "diffEditor.insertedTextBackground": "#4b7d5355",
     "diffEditor.removedTextBackground": "#b03e3455",
-    "panel.background": "#e9ebef",
+    "panel.background": "#edf1f5",
     "panel.border": "#d9dee5",
     "statusBar.background": "#e9ebef",
     "statusBar.foreground": "#2a2f37",
@@ -157,17 +157,26 @@
     },
     "keyword": "#7a4f7f",
     "string": "#4b7d53",
-    "function": "#2f6d86",
-    "function.declaration": "#2b6981ff",
-    "method": "#2f6d86",
-    "method.declaration": "#2b6981ff",
+    "function": {
+      "foreground": "#2f6d86",
+      "fontStyle": "bold"
+    },
+    "function.declaration": "#2f6d86",
+    "method": {
+      "foreground": "#2f6d86",
+      "fontStyle": "bold"
+    },
+    "method.declaration": "#2f6d86",
     "property": "#3f5f8f",
     "property.readonly": "#7a5f22",
     "type": "#8b6f2e",
-    "class": "#8b6f2e",
+    "class": {
+      "foreground": "#8b6f2e",
+      "fontStyle": "bold"
+    },
     "interface": "#556c82",
     "enum": "#8b6f2e",
-    "enumMember": "#7a5f22",
+    "enumMember": "#a08f52",
     "typeParameter": {
       "foreground": "#3f5f8f",
       "fontStyle": "italic"
@@ -194,7 +203,7 @@
     "string.regexp": "#3f5f8f",
     "formatSpecifier": "#3f5f8f",
     "escape": "#3f5f8f",
-    "number": "#7a5f22",
+    "number": "#9a7f42",
     "boolean": "#b03e34",
     "typeAlias": "#8b6f2e",
     "namespace": "#2f6d86",
@@ -204,7 +213,10 @@
   "tokenColors": [
     {
       "name": "Comment",
-      "scope": ["comment", "punctuation.definition.comment"],
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#6a6f7a"
@@ -225,7 +237,11 @@
     },
     {
       "name": "Strings",
-      "scope": ["string", "string.quoted", "string.template"],
+      "scope": [
+        "string",
+        "string.quoted",
+        "string.template"
+      ],
       "settings": {
         "foreground": "#4b7d53"
       }
@@ -244,14 +260,20 @@
     },
     {
       "name": "Regexp & Escape",
-      "scope": ["string.regexp", "constant.character.escape"],
+      "scope": [
+        "string.regexp",
+        "constant.character.escape"
+      ],
       "settings": {
         "foreground": "#3f5f8f"
       }
     },
     {
       "name": "Invalid",
-      "scope": ["invalid", "invalid.illegal"],
+      "scope": [
+        "invalid",
+        "invalid.illegal"
+      ],
       "settings": {
         "foreground": "#b03e34"
       }
@@ -279,6 +301,7 @@
         "support.function"
       ],
       "settings": {
+        "fontStyle": "bold",
         "foreground": "#2f6d86"
       }
     },
@@ -295,7 +318,10 @@
     },
     {
       "name": "Parameters",
-      "scope": ["variable.parameter", "meta.parameter"],
+      "scope": [
+        "variable.parameter",
+        "meta.parameter"
+      ],
       "settings": {
         "foreground": "#556c82"
       }
@@ -310,12 +336,16 @@
         "support.type.sys-types"
       ],
       "settings": {
+        "fontStyle": "bold",
         "foreground": "#8b6f2e"
       }
     },
     {
       "name": "Interfaces",
-      "scope": ["entity.name.type.interface", "support.type.interface"],
+      "scope": [
+        "entity.name.type.interface",
+        "support.type.interface"
+      ],
       "settings": {
         "foreground": "#556c82"
       }
@@ -328,7 +358,7 @@
         "constant.other.enummember"
       ],
       "settings": {
-        "foreground": "#7a5f22"
+        "foreground": "#a08f52"
       }
     },
     {
@@ -495,7 +525,10 @@
     },
     {
       "name": "[TS/JS] Decorators",
-      "scope": ["source.ts meta.decorator", "source.tsx meta.decorator"],
+      "scope": [
+        "source.ts meta.decorator",
+        "source.tsx meta.decorator"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#2f6d86"
@@ -546,7 +579,9 @@
     },
     {
       "name": "[Python] self",
-      "scope": ["source.python variable.language.self"],
+      "scope": [
+        "source.python variable.language.self"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#b03e34"
@@ -565,16 +600,21 @@
     },
     {
       "name": "[C#] Parameters",
-      "scope": ["source.cs variable.parameter", "source.cs meta.parameter"],
+      "scope": [
+        "source.cs variable.parameter",
+        "source.cs meta.parameter"
+      ],
       "settings": {
         "foreground": "#556c82"
       }
     },
     {
       "name": "[C#] Primary Constructor Parameters",
-      "scope": ["source.cs variable.parameter.primary-constructor"],
+      "scope": [
+        "source.cs variable.parameter.primary-constructor"
+      ],
       "settings": {
-        "foreground": "#e5c287"
+        "foreground": "#e9c28a"
       }
     },
     {
@@ -604,7 +644,10 @@
     },
     {
       "name": "[C#] Attributes (Annotations)",
-      "scope": ["source.cs meta.attribute", "source.cs entity.name.attribute"],
+      "scope": [
+        "source.cs meta.attribute",
+        "source.cs entity.name.attribute"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#2f6d86"
@@ -612,21 +655,27 @@
     },
     {
       "name": "[C#] Access Modifiers",
-      "scope": ["source.cs keyword.other.access-modifier"],
+      "scope": [
+        "source.cs keyword.other.access-modifier"
+      ],
       "settings": {
         "foreground": "#724f7f"
       }
     },
     {
       "name": "[C#] Record Keyword",
-      "scope": ["source.cs keyword.other.record"],
+      "scope": [
+        "source.cs keyword.other.record"
+      ],
       "settings": {
         "foreground": "#824f7f"
       }
     },
     {
       "name": "[C#] Async Keyword",
-      "scope": ["source.cs keyword.other.async"],
+      "scope": [
+        "source.cs keyword.other.async"
+      ],
       "settings": {
         "foreground": "#7a4f7f",
         "fontStyle": "italic"
@@ -634,7 +683,9 @@
     },
     {
       "name": "[C#] Static Modifier",
-      "scope": ["source.cs storage.modifier.static"],
+      "scope": [
+        "source.cs storage.modifier.static"
+      ],
       "settings": {
         "foreground": "#7a4f7f",
         "fontStyle": "bold"
@@ -642,7 +693,9 @@
     },
     {
       "name": "[C#] LINQ Keywords",
-      "scope": ["source.cs keyword.other.linq"],
+      "scope": [
+        "source.cs keyword.other.linq"
+      ],
       "settings": {
         "foreground": "#7a4f7f",
         "fontStyle": "underline"
@@ -650,7 +703,9 @@
     },
     {
       "name": "[C#] Pattern Matching Keywords",
-      "scope": ["source.cs keyword.other.pattern"],
+      "scope": [
+        "source.cs keyword.other.pattern"
+      ],
       "settings": {
         "foreground": "#7a4f7f",
         "fontStyle": "bold"
@@ -669,14 +724,18 @@
     },
     {
       "name": "JSON Keys",
-      "scope": ["source.json support.type.property-name.json"],
+      "scope": [
+        "source.json support.type.property-name.json"
+      ],
       "settings": {
         "foreground": "#8b6f2e"
       }
     },
     {
       "name": "JSON Strings",
-      "scope": ["source.json string.quoted.double.json"],
+      "scope": [
+        "source.json string.quoted.double.json"
+      ],
       "settings": {
         "foreground": "#3f5f8f"
       }
