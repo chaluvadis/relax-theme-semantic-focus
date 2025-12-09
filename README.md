@@ -71,27 +71,9 @@ These work on macOS and Windows by prioritizing available fonts on each OS.
   "editor.guides.bracketPairsHorizontal": true
 }
 ```
-## Language coverage (highlights)
-
-- TypeScript / JavaScript / JSX / TSX
-  - Functions/methods, parameters, properties, classes, interfaces, enums, decorators, type annotations, namespaces, structs, modifiers
-- C# (.NET)
-  - Methods, parameters, classes/structs/interfaces/enums, attributes, namespaces, keywords, modifiers
-## Screenshots
-Place your screenshots in `images/` and reference them here:
-- Editor (TypeScript)
-- Editor (C#)
-- Search/Peek/Bracket Guides
 
 Example:
-**Dark Focus**
-![Dark Theme](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/relaxed-theme-dark.png)
-
-**Night Warm**
-![Night Warm](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/relaxed-theme-night.png)
-
-**Day Light**
-![Night Warm](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/relaxed-theme-light.png)
+![Theme Design](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/themes.gif)
 
 ## Credits
 
