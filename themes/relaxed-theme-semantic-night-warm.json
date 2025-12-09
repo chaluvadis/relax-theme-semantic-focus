@@ -212,10 +212,7 @@
   "tokenColors": [
     {
       "name": "Comment",
-      "scope": [
-        "comment",
-        "punctuation.definition.comment"
-      ],
+      "scope": ["comment", "punctuation.definition.comment"],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#908a82"
@@ -236,11 +233,7 @@
     },
     {
       "name": "Strings",
-      "scope": [
-        "string",
-        "string.quoted",
-        "string.template"
-      ],
+      "scope": ["string", "string.quoted", "string.template"],
       "settings": {
         "foreground": "#95ad63"
       }
@@ -259,20 +252,14 @@
     },
     {
       "name": "Regexp & Escape",
-      "scope": [
-        "string.regexp",
-        "constant.character.escape"
-      ],
+      "scope": ["string.regexp", "constant.character.escape"],
       "settings": {
         "foreground": "#c7d4e2"
       }
     },
     {
       "name": "Invalid",
-      "scope": [
-        "invalid",
-        "invalid.illegal"
-      ],
+      "scope": ["invalid", "invalid.illegal"],
       "settings": {
         "foreground": "#ce6f65"
       }
@@ -317,10 +304,7 @@
     },
     {
       "name": "Parameters",
-      "scope": [
-        "variable.parameter",
-        "meta.parameter"
-      ],
+      "scope": ["variable.parameter", "meta.parameter"],
       "settings": {
         "foreground": "#c2cdda"
       }
@@ -341,10 +325,7 @@
     },
     {
       "name": "Interfaces",
-      "scope": [
-        "entity.name.type.interface",
-        "support.type.interface"
-      ],
+      "scope": ["entity.name.type.interface", "support.type.interface"],
       "settings": {
         "foreground": "#c2cdda"
       }
@@ -524,10 +505,7 @@
     },
     {
       "name": "[TS/JS] Decorators",
-      "scope": [
-        "source.ts meta.decorator",
-        "source.tsx meta.decorator"
-      ],
+      "scope": ["source.ts meta.decorator", "source.tsx meta.decorator"],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#8fa0a0"
@@ -578,9 +556,7 @@
     },
     {
       "name": "[Python] self",
-      "scope": [
-        "source.python variable.language.self"
-      ],
+      "scope": ["source.python variable.language.self"],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#ce6f65"
@@ -599,19 +575,14 @@
     },
     {
       "name": "[C#] Parameters",
-      "scope": [
-        "source.cs variable.parameter",
-        "source.cs meta.parameter"
-      ],
+      "scope": ["source.cs variable.parameter", "source.cs meta.parameter"],
       "settings": {
         "foreground": "#c2cdda"
       }
     },
     {
       "name": "[C#] Primary Constructor Parameters",
-      "scope": [
-        "source.cs variable.parameter.primary-constructor"
-      ],
+      "scope": ["source.cs variable.parameter.primary-constructor"],
       "settings": {
         "foreground": "#e9c28a"
       }
@@ -643,10 +614,7 @@
     },
     {
       "name": "[C#] Attributes (Annotations)",
-      "scope": [
-        "source.cs meta.attribute",
-        "source.cs entity.name.attribute"
-      ],
+      "scope": ["source.cs meta.attribute", "source.cs entity.name.attribute"],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#8fa0a0"
@@ -654,27 +622,21 @@
     },
     {
       "name": "[C#] Access Modifiers",
-      "scope": [
-        "source.cs keyword.other.access-modifier"
-      ],
+      "scope": ["source.cs keyword.other.access-modifier"],
       "settings": {
         "foreground": "#9e789f"
       }
     },
     {
       "name": "[C#] Record Keyword",
-      "scope": [
-        "source.cs keyword.other.record"
-      ],
+      "scope": ["source.cs keyword.other.record"],
       "settings": {
         "foreground": "#ae789f"
       }
     },
     {
       "name": "[C#] Async Keyword",
-      "scope": [
-        "source.cs keyword.other.async"
-      ],
+      "scope": ["source.cs keyword.other.async"],
       "settings": {
         "foreground": "#a6789f",
         "fontStyle": "italic"
@@ -682,9 +644,7 @@
     },
     {
       "name": "[C#] Static Modifier",
-      "scope": [
-        "source.cs storage.modifier.static"
-      ],
+      "scope": ["source.cs storage.modifier.static"],
       "settings": {
         "foreground": "#a6789f",
         "fontStyle": "bold"
@@ -692,9 +652,7 @@
     },
     {
       "name": "[C#] LINQ Keywords",
-      "scope": [
-        "source.cs keyword.other.linq"
-      ],
+      "scope": ["source.cs keyword.other.linq"],
       "settings": {
         "foreground": "#a6789f",
         "fontStyle": "underline"
@@ -702,9 +660,7 @@
     },
     {
       "name": "[C#] Pattern Matching Keywords",
-      "scope": [
-        "source.cs keyword.other.pattern"
-      ],
+      "scope": ["source.cs keyword.other.pattern"],
       "settings": {
         "foreground": "#a6789f",
         "fontStyle": "bold"
@@ -723,20 +679,65 @@
     },
     {
       "name": "JSON Keys",
-      "scope": [
-        "source.json support.type.property-name.json"
-      ],
+      "scope": ["source.json support.type.property-name.json"],
       "settings": {
-        "foreground": "#d6b56f"
+        "foreground": "#8fa0a0",
+        "fontStyle": ""
       }
     },
     {
       "name": "JSON Strings",
+      "scope": ["source.json string.quoted.double.json"],
+      "settings": {
+        "foreground": "#95ad63"
+      }
+    },
+    {
+      "name": "YAML Keys",
+      "scope": ["entity.name.tag.yaml", "meta.mapping.key.yaml"],
+      "settings": {
+        "foreground": "#8fa0a0",
+        "fontStyle": ""
+      }
+    },
+    {
+      "name": "YAML Strings",
       "scope": [
-        "source.json string.quoted.double.json"
+        "string.quoted.single.yaml",
+        "string.quoted.double.yaml",
+        "string.unquoted.plain.yaml"
       ],
       "settings": {
-        "foreground": "#c7d4e2"
+        "foreground": "#95ad63"
+      }
+    },
+    {
+      "name": "YAML Numbers",
+      "scope": ["constant.numeric.yaml"],
+      "settings": {
+        "foreground": "#e6c491"
+      }
+    },
+    {
+      "name": "YAML Boolean",
+      "scope": ["constant.language.boolean.yaml"],
+      "settings": {
+        "foreground": "#ce6f65"
+      }
+    },
+    {
+      "name": "YAML Anchors & Aliases",
+      "scope": ["entity.name.tag.yaml", "variable.other.alias.yaml"],
+      "settings": {
+        "foreground": "#a6789f"
+      }
+    },
+    {
+      "name": "YAML Comments",
+      "scope": ["comment.line.yaml"],
+      "settings": {
+        "foreground": "#908a82",
+        "fontStyle": "italic"
       }
     },
     {
