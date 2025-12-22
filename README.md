@@ -1,62 +1,53 @@
 # Relaxed Theme – Semantic Focus
 
-A calm, readable dark theme for Visual Studio Code with first‑class semantic highlighting. Tuned for TypeScript/JavaScript, C# (.NET) with clear differentiation of keywords, functions, parameters, properties, and types. Includes thoughtful UI polish for search, peek, brackets, inlay hints, breadcrumbs, tabs, and minimap.
+Relaxed Theme – Semantic Focus is a bundled trio of VS Code themes engineered for semantic clarity, modern UI contrast, and cross-platform readability. Pick the palette that suits your environment:
+
+- Relaxed Theme – Dark Focus (neutral dusk tones with green focus cues)
+- Relaxed Theme – Day Light (soft daylight base with sharper focus overlays)
+- Relaxed Theme – Night Warm (warm charcoal shell with amber syntax accents, now fully harmonised)
+
+Each variant keeps the same semantic token mapping so language colors stay familiar while the UI adjusts to your lighting.
 
 ## Installation
 
-Install from the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=nomad-in-code.relaxed-theme-semantic-focus).
+Install from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=nomad-in-code.relaxed-theme-semantic-focus), then select the variant you prefer from the command palette (`Preferences: Color Theme`).
 
-- Consistent accent color and accessible contrast
-- Rich semantic token colors for TS/JS/JSX/TSX, C#
-- Works great on macOS and Windows
-- Git decorations and diff colors for quick code scanning
+## What’s new
 
-## Features
+- Refined keyboard focus and selection overlays across all variants, including explicit focus outlines for list rows.
+- Day Light theme gains lighter ANSI “bright” colors and stronger list/terminal selection contrast for better daylight legibility.
+- Night Warm switches to a cohesive amber accent family (links, progress, focus) and warmer function/method hues to match the UI shell.
+- Dark Focus separates side bar, panel, and status bar luminance so panes remain distinct without harsh contrast jumps.
 
-- Language semantics
-  - Strong separation of functions/methods, parameters, properties/fields, classes/types/interfaces, enums, members, namespaces, structs, and modifiers
-  - Semantic token support: namespaces, modules, readonly, static, default library, decorators/attributes, etc.
-- UI polish
-  - Find/Replace and Peek highlights
-  - Hover and linked editing highlights
-  - Bracket pair colors and vertical guides
-  - Inlay hints styled to be helpful yet subtle
-  - Breadcrumbs and Sticky Scroll theming
-  - Minimap, folding, and selection improvements
-- Git and diffs
-  - Clear added/modified/removed gutter and minimap signals
-  - Git decorations tuned to the palette
+## Feature highlights
 
-## Color palette
+- **Semantic coverage**: Dedicated colors for functions, methods, parameters, properties, classes, interfaces, enums, namespaces, modifiers, decorators, and readonly state.
+- **UI polish**: Themed find/replace, peek views, hover highlights, bracket guides, inlay hints, breadcrumbs, sticky scroll, minimap, and diff editor.
+- **Git-aware**: Consistent gutter, minimap, and explorer decorations for added/modified/deleted files, plus tuned terminal ANSI colors.
 
-| Role | Color |
-|---|---|
-| Background | `#2e333b` |
-| Foreground (text) | `#e0e0e0` |
-| Accent (links, focus, borders) | `#6a8799` |
-| String / Inserted | `#97af5d` |
-| Keyword / Macro | `#b06698` |
-| Number / Enum member | `#ecd3a8` |
-| Type / Class / Interface | `#e7c380` |
-| Function / Method | `#85a7bf` |
-| Property / Member | `#c9dfff` |
-| Interface | `#b8c8d8` |
-| Namespace | `#8aa0b3` |
-| Error / Deleted | `#d1635e` |
+## Palette snapshots
 
-## Enable semantic highlighting
-- Settings → “Editor: Semantic Highlighting” → On
-- Ensure language extensions are installed and updated:
+| Theme | Background | Foreground | Primary Accent | Focus Outline | Function / Method | Keyword | String | Alert / Removed |
+|---|---|---|---|---|---|---|---|---|
+| Dark Focus | #2b2f34 | #dde1e6 | #7e8f9c | #8fae6b | #85a7bf | #a47aa7 | #8fae6b | #c4776f |
+| Day Light | #f3f4f6 | #2a2f37 | #4b6b7d | #4b6b7d | #2f6d86 | #7a4f7f | #4b7d53 | #b03e34 |
+| Night Warm | #2f3336 | #e3e0dc | #cfa776 | #d6b56f | #e0a46a | #c48573 | #95ad63 | #ce6f65 |
+
+Color values above represent the main UI/accent choices; see the JSON theme files for the full mapping, including terminal, bracket, and diff colors.
+
+## Semantic highlighting
+
+- Ensure **Editor: Semantic Highlighting** is enabled (`Preferences → Settings`).
+- Install the language extensions that surface semantic tokens:
   - TypeScript/JavaScript (built-in)
   - C# ([C# Dev Kit or ms-dotnettools.csharp](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp))
+  - Python, YAML, JSON, and others benefit from the supplied TextMate scopes.
 
-## Recommended settings (cross‑platform)
-
-These work on macOS and Windows by prioritizing available fonts on each OS.
+## Recommended settings
 
 ```json
 {
-  "workbench.colorTheme": "Relaxed Theme - Semantic Focus",
+  "workbench.colorTheme": "Relaxed Theme - Dark Focus",
   "editor.semanticHighlighting.enabled": true,
   "editor.fontFamily": "SF Mono, 'Cascadia Code', JetBrains Mono, Menlo, Monaco, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
@@ -72,24 +63,25 @@ These work on macOS and Windows by prioritizing available fonts on each OS.
 }
 ```
 
-Example:
+Swap the `workbench.colorTheme` value to `Relaxed Theme - Day Light` or `Relaxed Theme - Night Warm` to preload another variant.
+
+## Preview
+
 ![Theme Design](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/themes.gif)
 
 ## Credits
 
-This extension is inspired by and builds upon the original Relaxed Theme. Many thanks to the [Relaxed](https://marketplace.visualstudio.com/items?itemName=mischah.relaxed-theme) Theme authors and contributors for the foundational palette and design ideas.
-
-If you maintain or know the canonical link for the Relaxed Theme you’d like credited, feel free to open a PR to add it here.
+Relaxed Theme – Semantic Focus draws inspiration from the original [Relaxed Theme](https://marketplace.visualstudio.com/items?itemName=mischah.relaxed-theme). Thanks to its creators for the foundation that made these focused variants possible. If you have attribution updates, open a PR.
 
 ## Contributing
 
-- Open issues and PRs with before/after screenshots where possible.
-- Keep contrast at or above WCAG AA (4.5:1) for critical UI.
-- Maintain the core palette; introduce new colors sparingly.
-- Test across macOS and Windows, and with TS/JS, C# files.
+- File issues or PRs with before/after screenshots whenever practical.
+- Maintain WCAG AA contrast (4.5:1) for core UI elements.
+- Keep new colors aligned with the existing palette families.
+- Test on macOS and Windows, and sample TypeScript, JavaScript, C#, and Markdown files before submitting.
 
 ## License
 
 See [LICENSE](https://github.com/chaluvadis/relax-theme-semantic-focus/blob/HEAD/LICENSE).
----
-Enjoy coding with a calm, consistent, and semantic‑rich theme.
+
+Enjoy a calmer, clearer editor experience—day, night, or in between.
