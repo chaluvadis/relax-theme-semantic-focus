@@ -53,18 +53,19 @@
     "list.hoverBackground": "#33373b",
     "list.focusBackground": "#9a8f7a",
     "list.focusForeground": "#ffffff",
+    "list.focusOutline": "#d6b56f",
     "list.inactiveSelectionForeground": "#e3e0dc",
-    "list.highlightForeground": "#9a8f7a",
+    "list.highlightForeground": "#cfa776",
     "editorSuggestWidget.background": "#2a2e31",
     "editorSuggestWidget.foreground": "#e3e0dc",
     "editorSuggestWidget.border": "#3a3e42",
     "editorSuggestWidget.selectedBackground": "#33373b",
     "editorSuggestWidget.selectedForeground": "#ffffff",
     "editorSuggestWidget.highlightForeground": "#9a8f7a",
-    "textLink.foreground": "#9a8f7a",
-    "progressBar.background": "#9a8f7a",
-    "pickerGroup.foreground": "#9a8f7a",
-    "notificationLink.foreground": "#9a8f7a",
+    "textLink.foreground": "#cfa776",
+    "progressBar.background": "#d6b56f",
+    "pickerGroup.foreground": "#cfa776",
+    "notificationLink.foreground": "#cfa776",
     "input.border": "#9a8f7a",
     "terminal.background": "#33373b",
     "terminal.foreground": "#e3e0dc",
@@ -154,19 +155,19 @@
       "foreground": "#908a82",
       "fontStyle": "italic"
     },
-    "keyword": "#a6789f",
+    "keyword": "#c48573",
     "string": "#95ad63",
     "function": {
-      "foreground": "#85a7bf",
+      "foreground": "#e0a46a",
       "fontStyle": "bold"
     },
-    "function.declaration": "#85a7bf",
+    "function.declaration": "#e0a46a",
     "method": {
-      "foreground": "#85a7bf",
+      "foreground": "#e0a46a",
       "fontStyle": "bold"
     },
-    "method.declaration": "#9fb0b0",
-    "property": "#b9d3ea",
+    "method.declaration": "#e6b277",
+    "property": "#c7d4e2",
     "property.readonly": "#e2c48f",
     "type": "#d6b56f",
     "class": {
@@ -190,10 +191,10 @@
       "foreground": "#c7d4e2",
       "fontStyle": "italic"
     },
-    "event": "#a6789f",
-    "macro": "#a6789f",
+    "event": "#c48573",
+    "macro": "#c48573",
     "decorator": {
-      "foreground": "#8fa0a0",
+      "foreground": "#d6b56f",
       "fontStyle": "italic"
     },
     "label": "#a19a91",
@@ -205,9 +206,9 @@
     "number": "#e6c491",
     "boolean": "#ce6f65",
     "typeAlias": "#d6b56f",
-    "namespace": "#8fa0a0",
+    "namespace": "#bda980",
     "struct": "#d6b56f",
-    "modifier": "#a6789f"
+    "modifier": "#c48573"
   },
   "tokenColors": [
     {
@@ -228,7 +229,7 @@
         "keyword.operator"
       ],
       "settings": {
-        "foreground": "#a6789f"
+        "foreground": "#c48573"
       }
     },
     {
@@ -288,7 +289,7 @@
       ],
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#8fa0a0"
+        "foreground": "#e0a46a"
       }
     },
     {
@@ -368,7 +369,7 @@
       ],
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#8fa0a0"
+        "foreground": "#d6b56f"
       }
     },
     {
@@ -399,7 +400,7 @@
         "source.jsx entity.name.method"
       ],
       "settings": {
-        "foreground": "#8fa0a0"
+        "foreground": "#e0a46a"
       }
     },
     {
@@ -500,7 +501,7 @@
         "source.jsx variable.function"
       ],
       "settings": {
-        "foreground": "#9fa0a0"
+        "foreground": "#e0a46a"
       }
     },
     {
@@ -508,7 +509,7 @@
       "scope": ["source.ts meta.decorator", "source.tsx meta.decorator"],
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#8fa0a0"
+        "foreground": "#d6b56f"
       }
     },
     {
@@ -519,7 +520,7 @@
         "source.python support.function"
       ],
       "settings": {
-        "foreground": "#8fa0a0"
+        "foreground": "#e0a46a"
       }
     },
     {
@@ -570,7 +571,7 @@
         "source.cs support.function"
       ],
       "settings": {
-        "foreground": "#8fa0a0"
+        "foreground": "#e0a46a"
       }
     },
     {
@@ -609,7 +610,7 @@
         "source.cs support.namespace"
       ],
       "settings": {
-        "foreground": "#8fa0a0"
+        "foreground": "#bda980"
       }
     },
     {
@@ -617,28 +618,28 @@
       "scope": ["source.cs meta.attribute", "source.cs entity.name.attribute"],
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#8fa0a0"
+        "foreground": "#d6b56f"
       }
     },
     {
       "name": "[C#] Access Modifiers",
       "scope": ["source.cs keyword.other.access-modifier"],
       "settings": {
-        "foreground": "#9e789f"
+        "foreground": "#c07e6d"
       }
     },
     {
       "name": "[C#] Record Keyword",
       "scope": ["source.cs keyword.other.record"],
       "settings": {
-        "foreground": "#ae789f"
+        "foreground": "#c98573"
       }
     },
     {
       "name": "[C#] Async Keyword",
       "scope": ["source.cs keyword.other.async"],
       "settings": {
-        "foreground": "#a6789f",
+        "foreground": "#c48573",
         "fontStyle": "italic"
       }
     },
@@ -646,7 +647,7 @@
       "name": "[C#] Static Modifier",
       "scope": ["source.cs storage.modifier.static"],
       "settings": {
-        "foreground": "#a6789f",
+        "foreground": "#c48573",
         "fontStyle": "bold"
       }
     },
@@ -654,7 +655,7 @@
       "name": "[C#] LINQ Keywords",
       "scope": ["source.cs keyword.other.linq"],
       "settings": {
-        "foreground": "#a6789f",
+        "foreground": "#c48573",
         "fontStyle": "underline"
       }
     },
@@ -662,7 +663,7 @@
       "name": "[C#] Pattern Matching Keywords",
       "scope": ["source.cs keyword.other.pattern"],
       "settings": {
-        "foreground": "#a6789f",
+        "foreground": "#c48573",
         "fontStyle": "bold"
       }
     },
@@ -674,14 +675,14 @@
         "source.cs storage.modifier"
       ],
       "settings": {
-        "foreground": "#a6789f"
+        "foreground": "#c48573"
       }
     },
     {
       "name": "JSON Keys",
       "scope": ["source.json support.type.property-name.json"],
       "settings": {
-        "foreground": "#8fa0a0",
+        "foreground": "#c7d4e2",
         "fontStyle": ""
       }
     },
@@ -696,7 +697,7 @@
       "name": "YAML Keys",
       "scope": ["entity.name.tag.yaml", "meta.mapping.key.yaml"],
       "settings": {
-        "foreground": "#8fa0a0",
+        "foreground": "#c7d4e2",
         "fontStyle": ""
       }
     },
@@ -729,7 +730,7 @@
       "name": "YAML Anchors & Aliases",
       "scope": ["entity.name.tag.yaml", "variable.other.alias.yaml"],
       "settings": {
-        "foreground": "#a6789f"
+        "foreground": "#c48573"
       }
     },
     {
@@ -759,7 +760,7 @@
         "constant.other.reference.link.markdown"
       ],
       "settings": {
-        "foreground": "#9a8f7a"
+        "foreground": "#cfa776"
       }
     }
   ]
