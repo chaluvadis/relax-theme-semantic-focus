@@ -197,6 +197,10 @@
       "foreground": "#d6b56f",
       "fontStyle": "italic"
     },
+    "keyword.decorator": {
+      "foreground": "#d6b56f",
+      "fontStyle": "italic"
+    },
     "label": "#a19a91",
     "builtinType": "#d6b56f",
     "operator": "#e3e0dc",
@@ -762,6 +766,63 @@
       "settings": {
         "foreground": "#cfa776"
       }
+    },
+    {
+      "name": "Dockerfile Instructions",
+      "scope": [
+        "source.dockerfile entity.name.instruction",
+        "source.dockerfile keyword.other",
+        "source.dockerfile keyword.control"
+      ],
+      "settings": { "foreground": "#d6b56f", "fontStyle": "bold" }
+    },
+    {
+      "name": "Dockerfile Variables",
+      "scope": [
+        "source.dockerfile variable.parameter",
+        "source.dockerfile variable.other"
+      ],
+      "settings": { "foreground": "#c7d4e2" }
+    },
+    {
+      "name": "Dockerfile Comments",
+      "scope": [
+        "source.dockerfile comment",
+        "source.dockerfile punctuation.definition.comment"
+      ],
+      "settings": { "foreground": "#908a82", "fontStyle": "italic" }
+    },
+    {
+      "name": "Docker-Compose / YAML Keys",
+      "scope": [
+        "meta.mapping.key.yaml",
+        "entity.name.tag.yaml",
+        "support.type.property-name.yaml"
+      ],
+      "settings": { "foreground": "#c7d4e2", "fontStyle": "" }
+    },
+    {
+      "name": "C# Preprocessor Directives",
+      "scope": [
+        "meta.preprocessor.cs",
+        "keyword.control.directive.cs",
+        "punctuation.definition.preprocessor.cs"
+      ],
+      "settings": { "foreground": "#908a82", "fontStyle": "italic" }
+    },
+    {
+      "name": "TS/JS Export Keywords",
+      "scope": ["keyword.other.export", "storage.modifier.export"],
+      "settings": { "foreground": "#c48573", "fontStyle": "bold" }
+    },
+    {
+      "name": "Readonly Properties (TS)",
+      "scope": [
+        "variable.other.property.readonly",
+        "meta.property.readonly",
+        "storage.modifier.readonly"
+      ],
+      "settings": { "foreground": "#e2c48f", "fontStyle": "" }
     }
   ]
 }
