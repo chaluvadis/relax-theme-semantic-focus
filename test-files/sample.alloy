@@ -1,0 +1,63 @@
+// Grafana Alloy Configuration Example
+// This file demonstrates various Alloy components and features
+
+// Discover Kubernetes pods
+discovery.kubernetes "pods" {
+  role = "pod"
+}
+
+// Scrape metrics from discovered pods
+prometheus.scrape "default" {
+  targets = discovery.kubernetes.pods.targets
+  forward_to = [prometheus.remote_write.default.receiver]
+  scrape_interval = "15s"
+}
+
+// Send metrics to Prometheus endpoint
+prometheus.remote_write "default" {
+  endpoint {
+    url = "http://localhost:9009/api/prom/push"
+  }
+}
+
+// Loki logging configuration
+loki.source.file "logs" {
+  targets = [
+    {
+      "__path__" = "/var/log/*.log"
+      "job" = "varlogs"
+    }
+  ]
+  forward_to = [loki.write.default.receiver]
+}
+
+// Write logs to Loki
+loki.write "default" {
+  endpoint {
+    url = "http://localhost:3100/loki/api/v1/push"
+  }
+}
+
+// OpenTelemetry collector receiver
+otelcol.receiver.otlp "default" {
+  grpc {
+    endpoint = "0.0.0.0:4317"
+  }
+  
+  http {
+    endpoint = "0.0.0.0:4318"
+  }
+  
+  output {
+    metrics = [otelcol.exporter.otlp.default.input]
+    logs = [otelcol.exporter.otlp.default.input]
+    traces = [otelcol.exporter.otlp.default.input]
+  }
+}
+
+// OpenTelemetry exporter
+otelcol.exporter.otlp "default" {
+  client {
+    endpoint = "localhost:4317"
+  }
+}

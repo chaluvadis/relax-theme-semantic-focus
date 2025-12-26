@@ -1,0 +1,159 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Grafana Alloy",
+  "scopeName": "source.alloy",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#blocks" },
+    { "include": "#attributes" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#booleans" },
+    { "include": "#keywords" },
+    { "include": "#operators" },
+    { "include": "#functions" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.alloy",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.alloy",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "blocks": {
+      "patterns": [
+        {
+          "name": "meta.block.alloy",
+          "begin": "\\b([a-zA-Z_][a-zA-Z0-9_]*(?:\\.[a-zA-Z_][a-zA-Z0-9_]*)*)\\s+(\"[^\"]*\")\\s*\\{",
+          "beginCaptures": {
+            "1": { "name": "entity.name.type.component.alloy" },
+            "2": { "name": "string.quoted.double.label.alloy" }
+          },
+          "end": "\\}",
+          "patterns": [
+            { "include": "#comments" },
+            { "include": "#blocks" },
+            { "include": "#attributes" },
+            { "include": "#strings" },
+            { "include": "#numbers" },
+            { "include": "#booleans" },
+            { "include": "#keywords" },
+            { "include": "#operators" },
+            { "include": "#functions" }
+          ]
+        },
+        {
+          "name": "meta.block.nested.alloy",
+          "begin": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\{",
+          "beginCaptures": {
+            "1": { "name": "entity.name.type.block.alloy" }
+          },
+          "end": "\\}",
+          "patterns": [
+            { "include": "#comments" },
+            { "include": "#blocks" },
+            { "include": "#attributes" },
+            { "include": "#strings" },
+            { "include": "#numbers" },
+            { "include": "#booleans" },
+            { "include": "#keywords" },
+            { "include": "#operators" },
+            { "include": "#functions" }
+          ]
+        }
+      ]
+    },
+    "attributes": {
+      "patterns": [
+        {
+          "name": "meta.attribute.alloy",
+          "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(=)",
+          "captures": {
+            "1": { "name": "variable.other.property.alloy" },
+            "2": { "name": "keyword.operator.assignment.alloy" }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.alloy",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.alloy",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.alloy",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.alloy",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.alloy",
+          "match": "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?[smhd]?\\b"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.alloy",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.alloy",
+          "match": "\\b(forward_to|targets|receiver|endpoint)\\b"
+        },
+        {
+          "name": "keyword.other.alloy",
+          "match": "\\b(prometheus|loki|otelcol|discovery|local|remote_write|scrape|write|receiver|exporter)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.alloy",
+          "match": "(==|!=|<=|>=|<|>|\\+|-|\\*|/|%|&&|\\|\\||!)"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "meta.function-call.alloy",
+          "match": "\\b(sys\\.env|concat|join)\\s*\\(",
+          "captures": {
+            "1": { "name": "entity.name.function.alloy" }
+          }
+        }
+      ]
+    }
+  }
+}

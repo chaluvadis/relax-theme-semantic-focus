@@ -1,6 +1,8 @@
 # Relaxed Theme – Semantic Focus
 
-Relaxed Theme – Semantic Focus is a bundled trio of VS Code themes engineered for semantic clarity, modern UI contrast, and cross-platform readability. Pick the palette that suits your environment:
+Relaxed Theme – Semantic Focus is a bundled trio of VS Code themes engineered for semantic clarity, modern UI contrast, and cross-platform readability. **Now includes comprehensive Grafana Alloy language support!**
+
+Pick the palette that suits your environment:
 
 - Relaxed Theme – Dark Focus (neutral dusk tones with green focus cues)
 - Relaxed Theme – Day Light (soft daylight base with sharper focus overlays)
@@ -21,9 +23,24 @@ Install from the [VS Code Marketplace](https://marketplace.visualstudio.com/item
 
 ## Feature highlights
 
+### Theme Features
+
 - **Semantic coverage**: Dedicated colors for functions, methods, parameters, properties, classes, interfaces, enums, namespaces, modifiers, decorators, and readonly state.
 - **UI polish**: Themed find/replace, peek views, hover highlights, bracket guides, inlay hints, breadcrumbs, sticky scroll, minimap, and diff editor.
 - **Git-aware**: Consistent gutter, minimap, and explorer decorations for added/modified/deleted files, plus tuned terminal ANSI colors.
+
+### Grafana Alloy Language Support
+
+This extension now includes full language support for Grafana Alloy configuration files:
+
+- **Syntax Highlighting**: Complete syntax highlighting for `.alloy` files including components, attributes, comments, and expressions
+- **Real-time Validation**: Detects configuration errors like unbalanced braces, duplicate labels, and missing values
+- **Code Formatting**: Automatic formatting with proper indentation
+- **IntelliSense**: Auto-completion for common Alloy components and attributes
+- **Hover Documentation**: Quick documentation for components
+
+See [ALLOY_README.md](ALLOY_README.md) for detailed information about Grafana Alloy language support.
+
 
 ## Palette snapshots
 

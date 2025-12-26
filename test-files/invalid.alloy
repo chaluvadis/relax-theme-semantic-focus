@@ -1,0 +1,33 @@
+// Test file with validation errors
+
+// Missing closing brace
+prometheus.scrape "test" {
+  scrape_interval = "10s"
+
+// Duplicate label
+prometheus.scrape "duplicate" {
+  forward_to = [prometheus.remote_write.main.receiver]
+}
+
+prometheus.scrape "duplicate" {
+  forward_to = [prometheus.remote_write.other.receiver]
+}
+
+// Empty label
+prometheus.remote_write "" {
+  endpoint {
+    url = "http://example.com"
+  }
+}
+
+// Unclosed string
+loki.write "invalid" {
+  endpoint {
+    url = "http://localhost:3100
+  }
+}
+
+// Missing value
+discovery.kubernetes "k8s" {
+  role = 
+}
