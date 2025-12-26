@@ -128,11 +128,11 @@
       "patterns": [
         {
           "name": "keyword.control.alloy",
-          "match": "\\b(forward_to|targets|receiver|endpoint)\\b"
+          "match": "\\b(forward_to|targets|receiver|endpoint|output|input|client|grpc|http|tls|basic_auth|queue_config|rule|stage)\\b"
         },
         {
           "name": "keyword.other.alloy",
-          "match": "\\b(prometheus|loki|otelcol|discovery|local|remote_write|scrape|write|receiver|exporter)\\b"
+          "match": "\\b(prometheus|loki|otelcol|discovery|local|remote_write|scrape|write|receiver|exporter|processor|batch|relabel|process|source|file|kubernetes)\\b"
         }
       ]
     },

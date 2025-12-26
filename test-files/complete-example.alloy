@@ -1,0 +1,209 @@
+// Complete Grafana Alloy Configuration Example
+// This demonstrates a production-ready observability pipeline
+
+// ============================================
+// Service Discovery
+// ============================================
+
+// Discover Kubernetes pods
+discovery.kubernetes "pods" {
+  role = "pod"
+  namespaces {
+    names = ["default", "production"]
+  }
+}
+
+// Discover Kubernetes services
+discovery.kubernetes "services" {
+  role = "service"
+}
+
+// File-based service discovery
+discovery.file "local_targets" {
+  files = ["/etc/alloy/targets/*.json"]
+  refresh_interval = "30s"
+}
+
+// ============================================
+// Metrics Collection
+// ============================================
+
+// Scrape metrics from Kubernetes pods
+prometheus.scrape "k8s_pods" {
+  targets = discovery.kubernetes.pods.targets
+  forward_to = [
+    prometheus.relabel.add_labels.receiver,
+  ]
+  scrape_interval = "15s"
+  scrape_timeout = "10s"
+}
+
+// Relabel metrics to add custom labels
+prometheus.relabel "add_labels" {
+  forward_to = [prometheus.remote_write.mimir.receiver]
+  
+  rule {
+    source_labels = ["__address__"]
+    target_label = "instance"
+  }
+  
+  rule {
+    target_label = "environment"
+    replacement = "production"
+  }
+}
+
+// Send metrics to Grafana Mimir
+prometheus.remote_write "mimir" {
+  endpoint {
+    url = "http://mimir:9009/api/v1/push"
+    
+    basic_auth {
+      username = "admin"
+      password = sys.env("MIMIR_PASSWORD")
+    }
+    
+    queue_config {
+      capacity = 10000
+      max_shards = 50
+      max_samples_per_send = 5000
+    }
+  }
+}
+
+// Unix exporter for system metrics
+prometheus.exporter.unix "local" {
+  include_exporter_metrics = true
+  
+  filesystem {
+    mount_points_exclude = "^/(dev|proc|sys|var/lib/docker/.+)($|/)"
+  }
+}
+
+// Scrape from local exporter
+prometheus.scrape "system_metrics" {
+  targets = prometheus.exporter.unix.local.targets
+  forward_to = [prometheus.remote_write.mimir.receiver]
+  scrape_interval = "30s"
+}
+
+// ============================================
+// Logs Collection
+// ============================================
+
+// Collect logs from files
+loki.source.file "app_logs" {
+  targets = [
+    {
+      "__path__" = "/var/log/app/*.log"
+      "job" = "application"
+      "environment" = "production"
+    },
+    {
+      "__path__" = "/var/log/nginx/*.log"
+      "job" = "nginx"
+      "environment" = "production"
+    },
+  ]
+  forward_to = [loki.process.parse_logs.receiver]
+}
+
+// Process and parse logs
+loki.process "parse_logs" {
+  forward_to = [loki.write.loki_endpoint.receiver]
+  
+  stage.json {
+    expressions = {
+      level = "level",
+      message = "message",
+      timestamp = "timestamp",
+    }
+  }
+  
+  stage.labels {
+    values = {
+      level = "",
+    }
+  }
+}
+
+// Write logs to Loki
+loki.write "loki_endpoint" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+    
+    basic_auth {
+      username = "admin"
+      password = sys.env("LOKI_PASSWORD")
+    }
+  }
+}
+
+// ============================================
+// OpenTelemetry Collection
+// ============================================
+
+// OTLP receiver for traces, metrics, and logs
+otelcol.receiver.otlp "default" {
+  grpc {
+    endpoint = "0.0.0.0:4317"
+  }
+  
+  http {
+    endpoint = "0.0.0.0:4318"
+  }
+  
+  output {
+    metrics = [otelcol.processor.batch.default.input]
+    logs = [otelcol.processor.batch.default.input]
+    traces = [otelcol.processor.batch.default.input]
+  }
+}
+
+// Batch processor for efficient forwarding
+otelcol.processor.batch "default" {
+  timeout = "5s"
+  send_batch_size = 1024
+  
+  output {
+    metrics = [otelcol.exporter.otlp.tempo.input]
+    logs = [otelcol.exporter.otlp.tempo.input]
+    traces = [otelcol.exporter.otlp.tempo.input]
+  }
+}
+
+// Export to Grafana Tempo
+otelcol.exporter.otlp "tempo" {
+  client {
+    endpoint = "tempo:4317"
+    
+    tls {
+      insecure = true
+    }
+    
+    compression = "gzip"
+  }
+}
+
+// ============================================
+// Local File Storage
+// ============================================
+
+// Store configuration locally
+local.file "config" {
+  filename = "/etc/alloy/config.json"
+}
+
+// ============================================
+// Health Checks
+// ============================================
+
+// Monitor pipeline health
+prometheus.exporter.self "alloy" {
+}
+
+prometheus.scrape "alloy_metrics" {
+  targets = prometheus.exporter.self.alloy.targets
+  forward_to = [prometheus.remote_write.mimir.receiver]
+  scrape_interval = "15s"
+}

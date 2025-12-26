@@ -7,12 +7,19 @@ const KNOWN_COMPONENTS = [
   'prometheus.scrape',
   'prometheus.remote_write',
   'prometheus.exporter.unix',
+  'prometheus.exporter.self',
+  'prometheus.relabel',
   'loki.source.file',
   'loki.write',
+  'loki.process',
+  'loki.relabel',
   'otelcol.receiver.otlp',
   'otelcol.exporter.otlp',
+  'otelcol.processor.batch',
+  'otelcol.processor.attributes',
   'discovery.kubernetes',
   'discovery.file',
+  'discovery.relabel',
   'local.file'
 ];
 
@@ -24,7 +31,19 @@ const COMMON_ATTRIBUTES = [
   'url',
   'role',
   'scrape_interval',
-  'log_level'
+  'scrape_timeout',
+  'log_level',
+  'basic_auth',
+  'username',
+  'password',
+  'tls',
+  'insecure',
+  'queue_config',
+  'capacity',
+  'max_shards',
+  'batch_size',
+  'timeout',
+  'compression'
 ];
 
 interface ValidationIssue {
@@ -288,16 +307,37 @@ function provideHover(
     
     switch (word) {
       case 'prometheus.scrape':
-        markdown.appendMarkdown('Scrapes Prometheus metrics from targets.');
+        markdown.appendMarkdown('Scrapes Prometheus metrics from targets. Configure with `targets` and `forward_to` attributes.');
         break;
       case 'prometheus.remote_write':
-        markdown.appendMarkdown('Sends Prometheus metrics to a remote endpoint.');
+        markdown.appendMarkdown('Sends Prometheus metrics to a remote endpoint. Supports authentication and queue configuration.');
+        break;
+      case 'prometheus.relabel':
+        markdown.appendMarkdown('Relabels Prometheus metrics using relabeling rules.');
         break;
       case 'loki.write':
-        markdown.appendMarkdown('Sends logs to a Loki endpoint.');
+        markdown.appendMarkdown('Sends logs to a Loki endpoint. Supports batching and authentication.');
+        break;
+      case 'loki.source.file':
+        markdown.appendMarkdown('Reads log files from the filesystem and forwards them to Loki.');
+        break;
+      case 'loki.process':
+        markdown.appendMarkdown('Processes and transforms log entries using pipeline stages.');
         break;
       case 'discovery.kubernetes':
-        markdown.appendMarkdown('Discovers targets from Kubernetes API.');
+        markdown.appendMarkdown('Discovers targets from Kubernetes API. Supports pods, services, endpoints, and more.');
+        break;
+      case 'discovery.file':
+        markdown.appendMarkdown('Discovers targets from JSON or YAML files. Supports automatic file watching.');
+        break;
+      case 'otelcol.receiver.otlp':
+        markdown.appendMarkdown('Receives OpenTelemetry data (traces, metrics, logs) via OTLP protocol.');
+        break;
+      case 'otelcol.exporter.otlp':
+        markdown.appendMarkdown('Exports OpenTelemetry data to a remote OTLP endpoint.');
+        break;
+      case 'otelcol.processor.batch':
+        markdown.appendMarkdown('Batches OpenTelemetry data for efficient forwarding.');
         break;
       default:
         markdown.appendMarkdown('Component for Grafana Alloy configuration.');
