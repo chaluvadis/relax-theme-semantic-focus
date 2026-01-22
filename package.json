@@ -78,14 +78,10 @@
         "editor.formatOnSave": false,
         "editor.autoIndent": "advanced"
       }
-    },
-    "devDependencies": {
-      "sharp": "^0.33.0",
-      "vsce": "^2.15.0"
-    },
-    "license": "MIT",
-    "extensionKind": [
-      "ui"
-    ]
-  }
+    }
+  },
+  "license": "MIT",
+  "extensionKind": [
+    "ui"
+  ]
 }
