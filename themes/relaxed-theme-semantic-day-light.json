@@ -747,6 +747,34 @@
       }
     },
     {
+      "name": "YAML Template Expressions (Helm/Go Templates)",
+      "scope": [
+        "meta.embedded.expression",
+        "meta.embedded.expression.yaml",
+        "punctuation.definition.template-expression.begin",
+        "punctuation.definition.template-expression.end",
+        "punctuation.section.embedded.begin.yaml",
+        "punctuation.section.embedded.end.yaml"
+      ],
+      "settings": {
+        "foreground": "#3f5f8f",
+        "fontStyle": ""
+      }
+    },
+    {
+      "name": "YAML Template Variables & Functions",
+      "scope": [
+        "variable.other.template.yaml",
+        "meta.template.expression.yaml",
+        "entity.name.function.template.yaml",
+        "support.function.template.yaml"
+      ],
+      "settings": {
+        "foreground": "#2f6d86",
+        "fontStyle": ""
+      }
+    },
+    {
       "name": "Markdown Headings",
       "scope": [
         "markup.heading",

@@ -69,15 +69,19 @@
       "window.autoDetectColorScheme": true,
       "workbench.preferredDarkColorTheme": "Relaxed Theme - Dark Focus (Semantic)",
       "workbench.preferredLightColorTheme": "Relaxed Theme - Day Light (Semantic)",
-      "editor.semanticHighlighting.enabled": true
-    },
-    "devDependencies": {
-      "sharp": "^0.33.0",
-      "vsce": "^2.15.0"
-    },
-    "license": "MIT",
-    "extensionKind": [
-      "ui"
-    ]
-  }
+      "editor.semanticHighlighting.enabled": true,
+      "[yaml]": {
+        "editor.formatOnSave": false,
+        "editor.autoIndent": "advanced"
+      },
+      "[helm]": {
+        "editor.formatOnSave": false,
+        "editor.autoIndent": "advanced"
+      }
+    }
+  },
+  "license": "MIT",
+  "extensionKind": [
+    "ui"
+  ]
 }
