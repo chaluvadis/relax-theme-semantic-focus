@@ -69,7 +69,15 @@
       "window.autoDetectColorScheme": true,
       "workbench.preferredDarkColorTheme": "Relaxed Theme - Dark Focus (Semantic)",
       "workbench.preferredLightColorTheme": "Relaxed Theme - Day Light (Semantic)",
-      "editor.semanticHighlighting.enabled": true
+      "editor.semanticHighlighting.enabled": true,
+      "[yaml]": {
+        "editor.formatOnSave": false,
+        "editor.autoIndent": "advanced"
+      },
+      "[helm]": {
+        "editor.formatOnSave": false,
+        "editor.autoIndent": "advanced"
+      }
     },
     "devDependencies": {
       "sharp": "^0.33.0",
