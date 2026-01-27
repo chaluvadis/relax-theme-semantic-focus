@@ -8,6 +8,9 @@ Relaxed Theme – Semantic Focus is a bundled trio of VS Code themes engineered 
 
 Each variant keeps the same semantic token mapping so language colors stay familiar while the UI adjusts to your lighting.
 
+---
+![Build & Release VS Code Extension](https://github.com/chaluvadis/relax-theme-semantic-focus/actions/workflows/main.yml/badge.svg)
+
 ## Installation
 
 Install from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=nomad-in-code.relaxed-theme-semantic-focus), then select the variant you prefer from the command palette (`Preferences: Color Theme`).
