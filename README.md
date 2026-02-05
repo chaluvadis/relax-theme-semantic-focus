@@ -22,6 +22,45 @@ Install from the [VS Code Marketplace](https://marketplace.visualstudio.com/item
 - Night Warm switches to a cohesive amber accent family (links, progress, focus) and warmer function/method hues to match the UI shell.
 - Dark Focus separates side bar, panel, and status bar luminance so panes remain distinct without harsh contrast jumps.
 
+## VSCode 1.109 Modernizations
+
+Starting with version 0.0.13, Relaxed Theme – Semantic Focus incorporates the modern UI features introduced in Visual Studio Code 1.109, bringing enhanced depth, focus, and a contemporary aesthetic to all three theme variants.
+
+### Key Enhancements
+
+**Transparency & Frosted Glass Effects**
+- Overlay elements (Command Palette, Quick Open, Suggest Widget, Dropdown menus) now use semi-transparent RGBA backgrounds with 87-94% opacity, creating a subtle frosted glass appearance that allows underlying content to show through while maintaining excellent readability.
+- Peek views and breadcrumb pickers feature layered transparency (90-94% opacity), giving a modern "floating" feel to these UI elements.
+- Notifications, menus, and input widgets adopt similar transparency for a cohesive, unified experience across all interactive surfaces.
+
+**Softer, More Refined Shadows**
+- Widget shadows reduced to 25% opacity for dark themes (#00000040) and 12.5% for light theme (#00000020), creating gentler depth cues without overwhelming the interface.
+- Scrollbar shadows now use approximately 25% opacity, providing subtle elevation hints that enhance spatial relationships between UI components.
+- The softer shadow approach aligns with modern design principles, reducing eye strain during extended coding sessions.
+
+**Flattened Background Hierarchy**
+- Reduced contrast between editor, sidebar, panel, activity bar, and status bar backgrounds for a more unified, cohesive workspace.
+- Dark Focus: Background tones now range from #26292e to #2b2f34, creating smooth transitions rather than stark separations.
+- Day Light: Ultra-subtle background gradations (#eaedf0 to #f3f4f6) maintain spatial awareness without harsh divisions.
+- Night Warm: Harmonized warm charcoal tones (#2b2f33 to #2f3336) for a seamless, enveloping environment.
+
+### Backward Compatibility
+
+All changes are fully backward compatible with VSCode 1.85 and later. The transparency and shadow features work seamlessly across platforms (Windows, macOS, Linux):
+- RGBA color values using 8-digit hex notation (#RRGGBBAA) are standard in VSCode theme definitions.
+- No experimental APIs or flags are required.
+- Themes maintain their core identity and color relationships while adopting modern presentation techniques.
+
+### Design Philosophy
+
+These modernizations enhance visual hierarchy and focus without compromising the core principles that make Relaxed Theme special:
+- **Readability First**: Transparency is carefully calibrated to enhance, not interfere with, code legibility.
+- **WCAG AA Compliance**: All text maintains 4.5:1 contrast ratios or better against their backgrounds.
+- **Semantic Consistency**: Token colors remain unchanged, preserving familiar language highlighting across all updates.
+- **Cross-platform Unity**: Effects work identically on all supported operating systems.
+
+The result is a theme family that feels both timeless and contemporary—calm and clear with a modern polish that complements VSCode 1.109's enhanced capabilities.
+
 ## Feature highlights
 
 - **Semantic coverage**: Dedicated colors for functions, methods, parameters, properties, classes, interfaces, enums, namespaces, modifiers, decorators, and readonly state.
