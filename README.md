@@ -29,8 +29,8 @@ Starting with version 0.0.13, Relaxed Theme – Semantic Focus incorporates the 
 ### Key Enhancements
 
 **Transparency & Frosted Glass Effects**
-- Overlay elements (Command Palette, Quick Open, Suggest Widget, Dropdown menus) now use semi-transparent RGBA backgrounds with ~90% opacity, creating a subtle frosted glass appearance that allows underlying content to show through while maintaining excellent readability.
-- Peek views and breadcrumb pickers feature layered transparency, giving a modern "floating" feel to these UI elements.
+- Overlay elements (Command Palette, Quick Open, Suggest Widget, Dropdown menus) now use semi-transparent RGBA backgrounds with 87-94% opacity, creating a subtle frosted glass appearance that allows underlying content to show through while maintaining excellent readability.
+- Peek views and breadcrumb pickers feature layered transparency (90-94% opacity), giving a modern "floating" feel to these UI elements.
 - Notifications, menus, and input widgets adopt similar transparency for a cohesive, unified experience across all interactive surfaces.
 
 **Softer, More Refined Shadows**
