@@ -34,8 +34,8 @@ Starting with version 0.0.13, Relaxed Theme – Semantic Focus incorporates the 
 - Notifications, menus, and input widgets adopt similar transparency for a cohesive, unified experience across all interactive surfaces.
 
 **Softer, More Refined Shadows**
-- Widget shadows reduced from 44% to 25% opacity (30-40% for dark themes, 12% for light theme), creating gentler depth cues without overwhelming the interface.
-- Scrollbar shadows now use 25% opacity, providing subtle elevation hints that enhance spatial relationships between UI components.
+- Widget shadows reduced to 25% opacity for dark themes (#00000040) and 12.5% for light theme (#00000020), creating gentler depth cues without overwhelming the interface.
+- Scrollbar shadows now use approximately 25% opacity, providing subtle elevation hints that enhance spatial relationships between UI components.
 - The softer shadow approach aligns with modern design principles, reducing eye strain during extended coding sessions.
 
 **Flattened Background Hierarchy**
@@ -46,8 +46,8 @@ Starting with version 0.0.13, Relaxed Theme – Semantic Focus incorporates the 
 
 ### Backward Compatibility
 
-All changes are fully backward compatible with VSCode 1.85 and later. The transparency and shadow features work seamlessly across platforms (Windows, macOS, Linux) and degrade gracefully on older VSCode versions:
-- RGBA color values with alpha channels are standard CSS and work in all VSCode releases since 1.85.
+All changes are fully backward compatible with VSCode 1.85 and later. The transparency and shadow features work seamlessly across platforms (Windows, macOS, Linux):
+- RGBA color values using 8-digit hex notation (#RRGGBBAA) are standard in VSCode theme definitions.
 - No experimental APIs or flags are required.
 - Themes maintain their core identity and color relationships while adopting modern presentation techniques.
 
