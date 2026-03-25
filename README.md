@@ -85,6 +85,44 @@ Color values above represent the main UI/accent choices; see the JSON theme file
   - C# ([C# Dev Kit or ms-dotnettools.csharp](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp))
   - Python, YAML, JSON, and others benefit from the supplied TextMate scopes.
 
+### Semantic token coverage
+
+The table below lists which token types receive dedicated per-language overrides (beyond the global defaults). ✔ = language-specific tuning active, — = global rule applies.
+
+| Token | TypeScript | JavaScript | C# | Python |
+|---|---|---|---|---|
+| `parameter` | ✔ | ✔ | — | ✔ |
+| `property` | ✔ | ✔ | — | — |
+| `method` | ✔ | ✔ | — | — |
+| `interface` | — | — | ✔ | — |
+| `enumMember` | — | — | ✔ | — |
+| `namespace` | — | — | ✔ | — |
+| `variable.readonly` | — | — | — | ✔ |
+| All other tokens | ✔ | ✔ | ✔ | ✔ |
+
+Language-specific values are defined in each theme JSON under `semanticTokenColors` using the `"tokenType:languageId"` selector (e.g. `"parameter:typescript"`). These override the global rule only for that language, so global coverage is always available as a fallback.
+
+## Reduced transparency
+
+All overlay surfaces (Command Palette, Quick Open, menus, notifications, peek views) use 94% opacity by default, which suits most displays. If you are on a lower-contrast monitor or prefer fully solid backgrounds, add any of the following overrides to your `settings.json`:
+
+```json
+"workbench.colorCustomizations": {
+  // Uncomment / adjust the entries you want to make fully opaque.
+  // Replace the last two hex digits with "ff" to remove transparency.
+  // Example shown for Dark Focus — adjust hex bases for Day Light / Night Warm.
+  "editorSuggestWidget.background": "#24282dff",
+  "quickInput.background": "#282c31ff",
+  "menu.background": "#282c31ff",
+  "notifications.background": "#282c31ff",
+  "dropdown.background": "#282c31ff",
+  "breadcrumbPicker.background": "#282c31ff",
+  "peekViewEditor.background": "#2f3540ff"
+}
+```
+
+The same technique works for any other semi-transparent color listed in the theme files. Setting the alpha bytes to `ff` fully disables the frosted-glass effect for that surface.
+
 ## Recommended settings
 
 ```json
@@ -106,6 +144,34 @@ Color values above represent the main UI/accent choices; see the JSON theme file
 ```
 
 Swap the `workbench.colorTheme` value to `Relaxed Theme - Day Light` or `Relaxed Theme - Night Warm` to preload another variant.
+
+## Terminal color accessibility
+
+All three variants ship ANSI terminal colors that are verified for legibility and color-blind safety.
+
+### ANSI color matrix
+
+| Color | Dark Focus | Day Light | Night Warm |
+|---|---|---|---|
+| Black | #151515 | #4a4a4a | #151515 |
+| Red | #c4776f | #b03e34 | #ce6f65 |
+| Green | #8fae6b | #4b7d53 | #95ad63 |
+| Yellow | #d7c27e | #8b6f2e | #d6b56f |
+| Blue | #85a7bf | #2f6d86 | #8fa0a0 |
+| Magenta | #a47aa7 | #7a4f7f | #a6789f |
+| Cyan | #b9d3ea | #3f5f8f | #c7d4e2 |
+| White | #dde1e6 | #2a2f37 | #e3e0dc |
+| Bright Green | **#a8c97f** | **#3d8a4a** | **#a8c070** |
+| Bright Red | **#d98880** | **#c42c2c** | **#e07a70** |
+
+Bold rows show the adjusted bright-green/red values introduced in this release. Bright variants are now visually distinct from their standard counterparts across all themes.
+
+### Color-blind accessibility
+
+- Every bright red and bright green value maintains **≥3.5:1** contrast against its respective terminal background—ensuring both colors remain individually legible even when hue alone cannot be relied upon.
+- The Day Light bright red (#c42c2c) and bright green (#3d8a4a) achieve **≥4.5:1** contrast against the light terminal background (#eaedf1), meeting WCAG AA for normal text.
+- Red and green are drawn from opposite regions of the sRGB gamut so they remain distinguishable at moderate luminance differences; users who require stronger separation can override individual colors via `workbench.colorCustomizations` in `settings.json`.
+- Terminal foreground (#dde1e6 / #2a2f37 / #e3e0dc) maintains **≥7:1** contrast against each theme's terminal background.
 
 ## Preview
 

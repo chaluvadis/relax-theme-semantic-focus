@@ -56,7 +56,7 @@
     "list.focusOutline": "#8fae6b",
     "list.inactiveSelectionForeground": "#dde1e6",
     "list.highlightForeground": "#7e8f9c",
-    "editorSuggestWidget.background": "#24282de6",
+    "editorSuggestWidget.background": "#24282df0",
     "editorSuggestWidget.foreground": "#dde1e6",
     "editorSuggestWidget.border": "#363b42",
     "editorSuggestWidget.selectedBackground": "#30353b",
@@ -67,14 +67,14 @@
     "pickerGroup.foreground": "#7e8f9c",
     "notificationLink.foreground": "#7e8f9c",
     "input.border": "#7e8f9c",
-    "quickInput.background": "#282c31e6",
+    "quickInput.background": "#282c31f0",
     "quickInputList.focusBackground": "#30353b",
-    "menu.background": "#282c31e6",
+    "menu.background": "#282c31f0",
     "menu.selectionBackground": "#30353b",
-    "notifications.background": "#282c31e6",
+    "notifications.background": "#282c31f0",
     "notificationCenter.border": "#363b42",
     "notificationToast.border": "#363b42",
-    "dropdown.background": "#282c31e6",
+    "dropdown.background": "#282c31f0",
     "dropdown.border": "#363b42",
     "terminal.background": "#30353b",
     "terminal.foreground": "#dde1e6",
@@ -83,9 +83,9 @@
     "terminal.ansiBrightBlack": "#8a8f98",
     "terminal.ansiBrightBlue": "#85a7bf",
     "terminal.ansiBrightCyan": "#b9d3ea",
-    "terminal.ansiBrightGreen": "#8fae6b",
+    "terminal.ansiBrightGreen": "#a8c97f",
     "terminal.ansiBrightMagenta": "#a47aa7",
-    "terminal.ansiBrightRed": "#c4776f",
+    "terminal.ansiBrightRed": "#d98880",
     "terminal.ansiBrightWhite": "#ffffff",
     "terminal.ansiBrightYellow": "#d7c27e",
     "terminal.ansiCyan": "#b9d3ea",
@@ -107,7 +107,7 @@
     "peekViewTitleLabel.foreground": "#dde1e6",
     "peekViewTitleDescription.foreground": "#a9b3bc",
     "peekView.border": "#7e8f9c",
-    "peekViewEditor.background": "#2f3540f0",
+    "peekViewEditor.background": "#2f3540f5",
     "peekViewEditor.matchHighlightBackground": "#7e8f9c30",
     "peekViewResult.background": "#282c31",
     "peekViewResult.matchHighlightBackground": "#7e8f9c30",
@@ -140,7 +140,7 @@
     "breadcrumb.focusForeground": "#dde1e6",
     "breadcrumb.activeSelectionForeground": "#dde1e6",
     "breadcrumb.background": "#2b2f34",
-    "breadcrumbPicker.background": "#282c31e6",
+    "breadcrumbPicker.background": "#282c31f0",
     "editorStickyScroll.background": "#2b2f34",
     "editorStickyScrollHover.background": "#30353b",
     "editorStickyScroll.border": "#363b42",
@@ -221,12 +221,35 @@
     "typeAlias": "#d7c27e",
     "namespace": "#8aa0b3",
     "struct": "#d7c27e",
-    "modifier": "#a47aa7"
+    "modifier": "#a47aa7",
+    "parameter:typescript": "#c5cfd8",
+    "parameter:javascript": "#c5cfd8",
+    "property:typescript": "#9ec4dc",
+    "property:javascript": "#9ec4dc",
+    "method:typescript": {
+      "foreground": "#8fbcd0",
+      "fontStyle": "bold"
+    },
+    "method:javascript": {
+      "foreground": "#8fbcd0",
+      "fontStyle": "bold"
+    },
+    "interface:csharp": {
+      "foreground": "#7eccc7",
+      "fontStyle": ""
+    },
+    "enumMember:csharp": "#f5c35a",
+    "namespace:csharp": "#9abbe0",
+    "parameter:python": "#c8d8e0",
+    "variable.readonly:python": "#ecd3a8"
   },
   "tokenColors": [
     {
       "name": "Comment",
-      "scope": ["comment", "punctuation.definition.comment"],
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#8a9098"
@@ -247,7 +270,11 @@
     },
     {
       "name": "Strings",
-      "scope": ["string", "string.quoted", "string.template"],
+      "scope": [
+        "string",
+        "string.quoted",
+        "string.template"
+      ],
       "settings": {
         "foreground": "#8fae6b"
       }
@@ -266,14 +293,20 @@
     },
     {
       "name": "Regexp & Escape",
-      "scope": ["string.regexp", "constant.character.escape"],
+      "scope": [
+        "string.regexp",
+        "constant.character.escape"
+      ],
       "settings": {
         "foreground": "#b9d3ea"
       }
     },
     {
       "name": "Invalid",
-      "scope": ["invalid", "invalid.illegal"],
+      "scope": [
+        "invalid",
+        "invalid.illegal"
+      ],
       "settings": {
         "foreground": "#c4776f"
       }
@@ -318,7 +351,10 @@
     },
     {
       "name": "Parameters",
-      "scope": ["variable.parameter", "meta.parameter"],
+      "scope": [
+        "variable.parameter",
+        "meta.parameter"
+      ],
       "settings": {
         "foreground": "#b8c8d8"
       }
@@ -339,7 +375,10 @@
     },
     {
       "name": "Interfaces",
-      "scope": ["entity.name.type.interface", "support.type.interface"],
+      "scope": [
+        "entity.name.type.interface",
+        "support.type.interface"
+      ],
       "settings": {
         "foreground": "#b8c8d8"
       }
@@ -519,7 +558,10 @@
     },
     {
       "name": "[TS/JS] Decorators",
-      "scope": ["source.ts meta.decorator", "source.tsx meta.decorator"],
+      "scope": [
+        "source.ts meta.decorator",
+        "source.tsx meta.decorator"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#85a7bf"
@@ -570,7 +612,9 @@
     },
     {
       "name": "[Python] self",
-      "scope": ["source.python variable.language.self"],
+      "scope": [
+        "source.python variable.language.self"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#c4776f"
@@ -589,14 +633,19 @@
     },
     {
       "name": "[C#] Parameters",
-      "scope": ["source.cs variable.parameter", "source.cs meta.parameter"],
+      "scope": [
+        "source.cs variable.parameter",
+        "source.cs meta.parameter"
+      ],
       "settings": {
         "foreground": "#b8c8d8"
       }
     },
     {
       "name": "[C#] Primary Constructor Parameters",
-      "scope": ["source.cs variable.parameter.primary-constructor"],
+      "scope": [
+        "source.cs variable.parameter.primary-constructor"
+      ],
       "settings": {
         "foreground": "#e9c28a"
       }
@@ -628,7 +677,10 @@
     },
     {
       "name": "[C#] Attributes (Annotations)",
-      "scope": ["source.cs meta.attribute", "source.cs entity.name.attribute"],
+      "scope": [
+        "source.cs meta.attribute",
+        "source.cs entity.name.attribute"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#85a7bf"
@@ -636,21 +688,27 @@
     },
     {
       "name": "[C#] Access Modifiers",
-      "scope": ["source.cs keyword.other.access-modifier"],
+      "scope": [
+        "source.cs keyword.other.access-modifier"
+      ],
       "settings": {
         "foreground": "#9a7aa7"
       }
     },
     {
       "name": "[C#] Record Keyword",
-      "scope": ["source.cs keyword.other.record"],
+      "scope": [
+        "source.cs keyword.other.record"
+      ],
       "settings": {
         "foreground": "#b47aa7"
       }
     },
     {
       "name": "[C#] Async Keyword",
-      "scope": ["source.cs keyword.other.async"],
+      "scope": [
+        "source.cs keyword.other.async"
+      ],
       "settings": {
         "foreground": "#a47aa7",
         "fontStyle": "italic"
@@ -658,7 +716,9 @@
     },
     {
       "name": "[C#] Static Modifier",
-      "scope": ["source.cs storage.modifier.static"],
+      "scope": [
+        "source.cs storage.modifier.static"
+      ],
       "settings": {
         "foreground": "#a47aa7",
         "fontStyle": "bold"
@@ -666,7 +726,9 @@
     },
     {
       "name": "[C#] LINQ Keywords",
-      "scope": ["source.cs keyword.other.linq"],
+      "scope": [
+        "source.cs keyword.other.linq"
+      ],
       "settings": {
         "foreground": "#a47aa7",
         "fontStyle": "underline"
@@ -674,7 +736,9 @@
     },
     {
       "name": "[C#] Pattern Matching Keywords",
-      "scope": ["source.cs keyword.other.pattern"],
+      "scope": [
+        "source.cs keyword.other.pattern"
+      ],
       "settings": {
         "foreground": "#a47aa7",
         "fontStyle": "bold"
@@ -693,7 +757,9 @@
     },
     {
       "name": "JSON Keys",
-      "scope": ["source.json support.type.property-name.json"],
+      "scope": [
+        "source.json support.type.property-name.json"
+      ],
       "settings": {
         "foreground": "#9ab4c6",
         "fontStyle": ""
@@ -701,14 +767,19 @@
     },
     {
       "name": "JSON Strings",
-      "scope": ["source.json string.quoted.double.json"],
+      "scope": [
+        "source.json string.quoted.double.json"
+      ],
       "settings": {
         "foreground": "#8fae6b"
       }
     },
     {
       "name": "YAML Keys",
-      "scope": ["entity.name.tag.yaml", "meta.mapping.key.yaml"],
+      "scope": [
+        "entity.name.tag.yaml",
+        "meta.mapping.key.yaml"
+      ],
       "settings": {
         "foreground": "#85a7bf",
         "fontStyle": ""
@@ -727,28 +798,37 @@
     },
     {
       "name": "YAML Numbers",
-      "scope": ["constant.numeric.yaml"],
+      "scope": [
+        "constant.numeric.yaml"
+      ],
       "settings": {
         "foreground": "#e4a85c"
       }
     },
     {
       "name": "YAML Boolean",
-      "scope": ["constant.language.boolean.yaml"],
+      "scope": [
+        "constant.language.boolean.yaml"
+      ],
       "settings": {
         "foreground": "#c4776f"
       }
     },
     {
       "name": "YAML Anchors & Aliases",
-      "scope": ["entity.name.tag.yaml", "variable.other.alias.yaml"],
+      "scope": [
+        "entity.name.tag.yaml",
+        "variable.other.alias.yaml"
+      ],
       "settings": {
         "foreground": "#a47aa7"
       }
     },
     {
       "name": "YAML Comments",
-      "scope": ["comment.line.yaml"],
+      "scope": [
+        "comment.line.yaml"
+      ],
       "settings": {
         "foreground": "#8a9098",
         "fontStyle": "italic"
@@ -811,7 +891,10 @@
         "source.dockerfile keyword.other",
         "source.dockerfile keyword.control"
       ],
-      "settings": { "foreground": "#d7c27e", "fontStyle": "bold" }
+      "settings": {
+        "foreground": "#d7c27e",
+        "fontStyle": "bold"
+      }
     },
     {
       "name": "Dockerfile Variables",
@@ -819,7 +902,9 @@
         "source.dockerfile variable.parameter",
         "source.dockerfile variable.other"
       ],
-      "settings": { "foreground": "#b9d3ea" }
+      "settings": {
+        "foreground": "#b9d3ea"
+      }
     },
     {
       "name": "Dockerfile Comments",
@@ -827,7 +912,10 @@
         "source.dockerfile comment",
         "source.dockerfile punctuation.definition.comment"
       ],
-      "settings": { "foreground": "#8a9098", "fontStyle": "italic" }
+      "settings": {
+        "foreground": "#8a9098",
+        "fontStyle": "italic"
+      }
     },
     {
       "name": "Docker-Compose / YAML Keys",
@@ -836,7 +924,10 @@
         "entity.name.tag.yaml",
         "support.type.property-name.yaml"
       ],
-      "settings": { "foreground": "#85a7bf", "fontStyle": "" }
+      "settings": {
+        "foreground": "#85a7bf",
+        "fontStyle": ""
+      }
     },
     {
       "name": "C# Preprocessor Directives",
@@ -845,12 +936,21 @@
         "keyword.control.directive.cs",
         "punctuation.definition.preprocessor.cs"
       ],
-      "settings": { "foreground": "#8a9098", "fontStyle": "italic" }
+      "settings": {
+        "foreground": "#8a9098",
+        "fontStyle": "italic"
+      }
     },
     {
       "name": "TS/JS Export Keywords",
-      "scope": ["keyword.other.export", "storage.modifier.export"],
-      "settings": { "foreground": "#a47aa7", "fontStyle": "bold" }
+      "scope": [
+        "keyword.other.export",
+        "storage.modifier.export"
+      ],
+      "settings": {
+        "foreground": "#a47aa7",
+        "fontStyle": "bold"
+      }
     },
     {
       "name": "Readonly Properties (TS)",
@@ -859,7 +959,10 @@
         "meta.property.readonly",
         "storage.modifier.readonly"
       ],
-      "settings": { "foreground": "#e4a85c", "fontStyle": "" }
+      "settings": {
+        "foreground": "#e4a85c",
+        "fontStyle": ""
+      }
     }
   ]
 }
