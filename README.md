@@ -22,44 +22,72 @@ Install from the [VS Code Marketplace](https://marketplace.visualstudio.com/item
 - Night Warm switches to a cohesive amber accent family (links, progress, focus) and warmer function/method hues to match the UI shell.
 - Dark Focus separates side bar, panel, and status bar luminance so panes remain distinct without harsh contrast jumps.
 
-## VSCode 1.109 Modernizations
+## VSCode 1.112+ Modernizations
 
-Starting with version 0.0.13, Relaxed Theme – Semantic Focus incorporates the modern UI features introduced in Visual Studio Code 1.109, bringing enhanced depth, focus, and a contemporary aesthetic to all three theme variants.
+Starting with version 0.0.14, Relaxed Theme – Semantic Focus incorporates additional UI surface color coverage across all three theme variants, filling previously untreated areas of the VS Code workbench and editor.
 
 ### Key Enhancements
 
-**Transparency & Frosted Glass Effects**
-- Overlay elements (Command Palette, Quick Open, Suggest Widget, Dropdown menus) now use semi-transparent RGBA backgrounds with 87-94% opacity, creating a subtle frosted glass appearance that allows underlying content to show through while maintaining excellent readability.
-- Peek views and breadcrumb pickers feature layered transparency (90-94% opacity), giving a modern "floating" feel to these UI elements.
-- Notifications, menus, and input widgets adopt similar transparency for a cohesive, unified experience across all interactive surfaces.
+**Expanded Editor & Tab Coverage**
+- Full tab state coverage: active, inactive, unfocused active/inactive, hover (normal and unfocused), modified (all four states), drag-and-drop, and last-pinned borders.
+- `editor.lineHighlightBorder`: subtle border on the active line for sharper spatial awareness.
+- `editor.inactiveLineHighlightBackground`: dimmed line highlight when editor loses focus.
+- `editor.selectionHighlightBorder`, `editor.wordHighlightBorder`, `editor.wordHighlightStrongBorder`: borders on symbol occurrences to complement existing backgrounds.
+- `editor.rangeHighlightBackground/Border` and `editor.symbolHighlightBackground/Border`: Quick Open, Go to Definition, and symbol navigation highlights.
+- `editorUnicodeHighlight.border/background`: highlights for non-ASCII characters.
+- `editorCodeLens.foreground`, `editorLightBulb.*`: CodeLens and lightbulb action icons.
+- `editorBracketMatch.background/border/foreground`: matching bracket highlight.
+- `editor.foldPlaceholderForeground`: collapsed placeholder text after folded code.
+- `editorIndentGuide.background/activeBackground`: indentation guide colors.
+- `editorOverviewRuler.background/border`: overview ruler behind the minimap.
+- `editorGutter.background`, `editorGutter.addedSecondaryBackground`, `editorGutter.deletedSecondaryBackground`, `editorGutter.modifiedSecondaryBackground`: gutter coloring for diff decorations.
 
-**Softer, More Refined Shadows**
-- Widget shadows reduced to 25% opacity for dark themes (#00000040) and 12.5% for light theme (#00000020), creating gentler depth cues without overwhelming the interface.
-- Scrollbar shadows now use approximately 25% opacity, providing subtle elevation hints that enhance spatial relationships between UI components.
-- The softer shadow approach aligns with modern design principles, reducing eye strain during extended coding sessions.
+**Workbench Surface Coverage**
+- `disabledForeground`: text on disabled controls.
+- `descriptionForeground`: secondary/help text in forms and settings.
+- `errorForeground`: global error text color.
+- `icon.foreground`: default icon color for Explorer, SCM, etc.
+- `titleBar.activeForeground/inactiveBackground/inactiveForeground/border`: complete title bar styling.
+- `activityBar.foreground/inactiveForeground/border/activeBorder/activeFocusBorder`: activity bar icon states and active indicator.
+- `sideBar.foreground/dropBackground`, `sideBarTitle.background/border`, `sideBarSectionHeader.foreground/border`: sidebar text and structure.
+- `panel.dropBorder`, `panelTitle.activeForeground/inactiveForeground/activeBorder/border`, `panelInput.border`, `panelSection.border`, `panelSectionHeader.foreground/border`: panel header and input styling.
+- `statusBar.foreground`, `statusBarItem.hover/active/prominent/error/warning/remote/hover states`: complete status bar item interaction coloring.
+- `menu.foreground/selectionForeground/selectionBorder/separatorBackground/border`: context and menubar completeness.
+- `notifications.foreground/border`: notification text and border.
+- `input.foreground/background/placeholderForeground`: input widget completeness.
+- `badge.foreground/background`: notification badges.
+- `pickerGroup.border`: quick pick group separator.
+- `dropdown.foreground`: dropdown widget text.
+- `quickInput.foreground`: quick input text.
+- `editorWidget.foreground/resizeBorder`, `editorSuggestWidget.selectedIconForeground`: editor widget completeness.
+- `list.activeSelectionIconForeground/inactiveSelectionIconForeground`, `list.deemphasizedForeground`, `list.focusHighlightForeground`, `list.focusAndSelectionOutline`, `list.dropBackground`, `list.filterMatchBackground/filterMatchBorder`: list/tree completeness.
+- `editorGroupHeader.tabsBorder`, `editorGroupHeader.border`, `editorGroup.border`, `editorGroup.dropBackground/emptyBackground/focusedEmptyBorder`, `editorPane.background`, `sideBySideEditor.horizontalBorder/verticalBorder`: editor group layout completeness.
 
-**Flattened Background Hierarchy**
-- Reduced contrast between editor, sidebar, panel, activity bar, and status bar backgrounds for a more unified, cohesive workspace.
-- Dark Focus: Background tones now range from #26292e to #2b2f34, creating smooth transitions rather than stark separations.
-- Day Light: Ultra-subtle background gradations (#eaedf0 to #f3f4f6) maintain spatial awareness without harsh divisions.
-- Night Warm: Harmonized warm charcoal tones (#2b2f33 to #2f3336) for a seamless, enveloping environment.
-
-### Backward Compatibility
-
-All changes are fully backward compatible with VSCode 1.85 and later. The transparency and shadow features work seamlessly across platforms (Windows, macOS, Linux):
-- RGBA color values using 8-digit hex notation (#RRGGBBAA) are standard in VSCode theme definitions.
-- No experimental APIs or flags are required.
-- Themes maintain their core identity and color relationships while adopting modern presentation techniques.
+**Terminal**
+- `terminal.border`, `terminal.inactiveSelectionBackground`, `terminal.selectionForeground`, `terminal.findMatch*`, `terminal.hoverHighlightBackground`, `terminal.dropBackground`, `terminal.tab.activeBorder`, `terminal.initialHintForeground`, `terminalCommandGuide.foreground`, `terminalOverviewRuler.*`, `terminalStickyScroll.*`: complete terminal UI coloring.
 
 ### Design Philosophy
 
-These modernizations enhance visual hierarchy and focus without compromising the core principles that make Relaxed Theme special:
-- **Readability First**: Transparency is carefully calibrated to enhance, not interfere with, code legibility.
-- **WCAG AA Compliance**: All text maintains 4.5:1 contrast ratios or better against their backgrounds.
-- **Semantic Consistency**: Token colors remain unchanged, preserving familiar language highlighting across all updates.
-- **Cross-platform Unity**: Effects work identically on all supported operating systems.
+All additions reuse the existing palette families:
+- Dark Focus: neutral blue-grey (#7e8f9c) accent, green (#8fae6b) focus, warm gold (#d7c27e) modified.
+- Day Light: cool blue (#4b6b7d) accent, forest green (#4b7d53) focus.
+- Night Warm: warm amber (#9a8f7a) accent, warm gold (#d6b56f) focus.
 
-The result is a theme family that feels both timeless and contemporary—calm and clear with a modern polish that complements VSCode 1.109's enhanced capabilities.
+No new color families were introduced. The additions fill structural gaps in the existing color hierarchy without altering the established mood or contrast relationships.
+
+### Backward Compatibility
+
+All additions are additive. Existing customizations using the original color keys continue to work unchanged. All new keys are documented in the [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color).
+
+### What's Next
+
+Future versions will address:
+- Chat/AI interface colors (`chat.*` keys)
+- Merge editor (`mergeEditor.*` keys)
+- Testing UI (`testing.*` keys)
+- Debug icons (`debugIcon.*` keys)
+- SCM graph colors (`scmGraph.*` keys)
+- Settings editor colors
 
 ## Feature highlights
 
