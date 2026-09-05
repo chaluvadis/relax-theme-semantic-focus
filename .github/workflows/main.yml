@@ -22,10 +22,15 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '22'
+        node-version: '26'
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: '9'
 
     - name: Install dependencies
-      run: npm i
+      run: pnpm install
 
     - name: Package extension
       run: |
@@ -37,7 +42,7 @@ jobs:
         OUT="di-service-navigator-${TAG}.vsix"
         echo "OUT=${OUT}" >> $GITHUB_ENV
         echo "Packaging VSIX -> ${OUT}"
-        npx vsce package --out "${OUT}"
+        pnpm exec vsce package --out "${OUT}"
       shell: bash
 
     - name: Get VSIX name
@@ -60,7 +65,7 @@ jobs:
       run: |
         echo "Publishing ${VSIX_NAME} to Visual Studio Marketplace"
         # Publish using vsce and the PAT you stored in VSCE_TOKEN
-        npx vsce publish --packagePath "${VSIX_NAME}" --pat "${VSCE_TOKEN}"
+        pnpm exec vsce publish --packagePath "${VSIX_NAME}" --pat "${VSCE_TOKEN}"
       shell: bash
 
     - name: Create GitHub Release and upload VSIX
