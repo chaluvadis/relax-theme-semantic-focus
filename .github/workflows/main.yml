@@ -3,69 +3,83 @@ name: Build & Release VS Code Extension
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 permissions:
   contents: write
-  packages: write
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0 # Ensures tags are available
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '26'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
 
-    - name: Install dependencies
-      run: pnpm install
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+          run_install: false
 
-    - name: Package extension
-      run: |
-        # Use the tag name as part of the VSIX filename when available.
-        TAG="${{ github.ref_name }}"
-        if [ -z "$TAG" ]; then
-          TAG="$(echo "${GITHUB_SHA}" | cut -c1-7)"
-        fi
-        OUT="di-service-navigator-${TAG}.vsix"
-        echo "OUT=${OUT}" >> $GITHUB_ENV
-        echo "Packaging VSIX -> ${OUT}"
-        pnpm exec vsce package --out "${OUT}"
-      shell: bash
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-    - name: Get VSIX name
-      id: get_version
-      run: |
-        echo "VSIX_NAME=$(ls *.vsix | head -n 1)" >> $GITHUB_ENV
+      - name: Package extension
+        shell: bash
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          OUT="di-service-navigator-${TAG}.vsix"
 
-    - name: Check VSCE token
-      run: |
-        if [ -z "${{ secrets.VSCE_TOKEN }}" ]; then
-          echo "ERROR: VSCE_TOKEN repository secret is not set. Add it in Settings → Secrets and variables → Actions → New repository secret (name: VSCE_TOKEN)." >&2
-          exit 1
-        fi
-      shell: bash
+          echo "OUT=${OUT}" >> "$GITHUB_ENV"
+          echo "Packaging VSIX -> ${OUT}"
 
-    - name: Publish to Visual Studio Marketplace
-      env:
-        VSIX_NAME: ${{ env.VSIX_NAME }}
-        VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
-      run: |
-        echo "Publishing ${VSIX_NAME} to Visual Studio Marketplace"
-        # Publish using vsce and the PAT you stored in VSCE_TOKEN
-        pnpm exec vsce publish --packagePath "${VSIX_NAME}" --pat "${VSCE_TOKEN}"
-      shell: bash
+          pnpm exec vsce package --out "${OUT}"
 
-    - name: Create GitHub Release and upload VSIX
-      uses: softprops/action-gh-release@v2
-      with:
-        files: ${{ env.VSIX_NAME }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify VSIX
+        shell: bash
+        run: |
+          if [ ! -f "${OUT}" ]; then
+            echo "ERROR: VSIX was not created: ${OUT}" >&2
+            exit 1
+          fi
+
+          echo "Created:"
+          ls -lh "${OUT}"
+
+      - name: Check VSCE token
+        shell: bash
+        env:
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+        run: |
+          if [ -z "${VSCE_TOKEN}" ]; then
+            echo "ERROR: VSCE_TOKEN repository secret is not set." >&2
+            exit 1
+          fi
+
+      - name: Publish to Visual Studio Marketplace
+        shell: bash
+        env:
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+        run: |
+          echo "Publishing ${OUT} to Visual Studio Marketplace"
+
+          pnpm exec vsce publish \
+            --packagePath "${OUT}" \
+            --pat "${VSCE_TOKEN}"
+
+      - name: Create GitHub Release and upload VSIX
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: ${{ env.OUT }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
