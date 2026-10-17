@@ -13,9 +13,10 @@ All three variants share the same semantic token mappings and UI coverage while 
 ## What's new
 
 - Added coordinated colors for merge conflict decorations and the merge editor, test results and coverage, debugger icons, SCM graph history, and the Settings UI.
-- Extended AI editing support with colors for inline chat, inline code changes, ghost text suggestions, and agent session surfaces.
+- Extended AI editing support with colors for chat requests, inline code changes, ghost text suggestions, edit markers, and agent session surfaces.
+- Added colors for modern floating workbench surfaces, top or bottom activity bars, notebook cells and outputs, chart controls, and interactive editor actions.
+- Improved contrast for chat and agent input placeholders, inactive activity bar icons, and text on agent buttons and badges.
 - Applied the new colors consistently across Dark Focus, Day Light, and Night Warm using each variant's existing palette.
-- Updated the README to reflect the current color coverage and varied transparency levels.
 
 ## Choose and install a theme
 
@@ -31,12 +32,17 @@ The extension requires VS Code `^1.140.0`.
 
 - **Semantic syntax colors** for functions, methods, parameters, properties, classes, interfaces, enums, namespaces, decorators, modifiers, and readonly values.
 - **Editor details** including bracket pair guides, selections, find and peek views, inlay hints, sticky scroll, minimap, and diff decorations.
-- **Workbench coverage** for tabs, editor groups, lists, menus, notifications, sidebars, panels, status bar, terminal, and chat.
-- **AI editing surfaces** for inline chat, agent sessions, ghost text, inserted and removed suggestions, and chat code blocks.
+- **Workbench coverage** for tabs, editor groups, lists, menus, notifications, sidebars, panels, status bar, terminal, modern floating layouts, and charts.
+- **AI editing surfaces** for inline chat, agent sessions, ghost text, inserted and removed suggestions, request states, and chat code blocks.
 - **Development tools** including settings controls, test states and coverage indicators, debugger icons, merge conflict views, and SCM graph history.
+- **Notebook support** for cells, outputs, selection, execution indicators, and notebook scrollbars.
 - **Terminal ANSI palettes** coordinated with each theme's syntax and UI colors.
 
 The color IDs follow the [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color). Theme colors are additive: existing user color customizations can continue to override them.
+
+### Accessibility refinements
+
+Placeholder text and inactive activity bar icons use brighter secondary colors for easier reading. Agent session buttons and badges use foreground colors chosen to contrast with their backgrounds. Contrast checks for these key foreground/background pairs exceed 4.5:1 in all three variants; this is a targeted check and not a claim that every syntax or UI color pair meets WCAG thresholds.
 
 ## Palette overview
 
