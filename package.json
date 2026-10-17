@@ -14,16 +14,16 @@
   },
   "homepage": "https://github.com/chaluvadis/relax-theme-semantic-focus#readme",
   "engines": {
-    "vscode": "^1.105.0"
+    "vscode": "^1.140.0"
   },
   "scripts": {
     "package": "vsce package",
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@types/vscode": "^1.105.0",
+    "@types/vscode": "^1.140.0",
     "typescript": "^7.0.2",
-    "@vscode/vsce": "^3.9.2"
+    "@vscode/vsce": "^4.0.0"
   },
   "categories": [
     "Themes"
