@@ -1,3 +1,4 @@
+
 name: Build & Release VS Code Extension
 
 on:
@@ -14,12 +15,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "24"
 
@@ -36,7 +37,7 @@ jobs:
         shell: bash
         run: |
           TAG="${GITHUB_REF_NAME}"
-          OUT="di-service-navigator-${TAG}.vsix"
+          OUT="relax-theme-semantic-focus-${TAG}.vsix"
 
           echo "OUT=${OUT}" >> "$GITHUB_ENV"
           echo "Packaging VSIX -> ${OUT}"
@@ -51,7 +52,6 @@ jobs:
             exit 1
           fi
 
-          echo "Created:"
           ls -lh "${OUT}"
 
       - name: Check VSCE token
@@ -69,8 +69,6 @@ jobs:
         env:
           VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
         run: |
-          echo "Publishing ${OUT} to Visual Studio Marketplace"
-
           pnpm exec vsce publish \
             --packagePath "${OUT}" \
             --pat "${VSCE_TOKEN}"

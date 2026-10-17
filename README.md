@@ -2,41 +2,45 @@
 
 [![Build & Release VS Code Extension](https://github.com/chaluvadis/relax-theme-semantic-focus/actions/workflows/main.yml/badge.svg)](https://github.com/chaluvadis/relax-theme-semantic-focus/actions/workflows/main.yml)
 
-A family of three calm, readable Visual Studio Code themes with semantic syntax highlighting and coordinated workbench colors. Choose a palette for your workspace and lighting:
-
-- **Dark Focus** — neutral dusk tones with green focus cues.
-- **Day Light** — a soft daylight base with cool blue accents.
-- **Night Warm** — warm charcoal surfaces with amber accents.
-
-All three variants share the same semantic token mappings and UI coverage while adapting colors to their palette.
+A family of three calm, readable Visual Studio Code themes with semantic syntax highlighting and coordinated colors for the editor, workbench, terminal, and AI editing surfaces.
 
 ## What's new
 
-- Added coordinated colors for merge conflict decorations and the merge editor, test results and coverage, debugger icons, SCM graph history, and the Settings UI.
-- Extended AI editing support with colors for inline chat, inline code changes, ghost text suggestions, and agent session surfaces.
-- Applied the new colors consistently across Dark Focus, Day Light, and Night Warm using each variant's existing palette.
-- Updated the README to reflect the current color coverage and varied transparency levels.
+- **AI editing:** Added coordinated colors for chat requests, inline chat, ghost text, inserted and removed edits, agent sessions, and edit markers.
+- **Workbench coverage:** Added colors for modern floating layouts, top and bottom activity bars, notebooks, charts, interactive editor actions, and additional settings and source control states.
+- **Accessibility refinements:** Improved contrast for input placeholders and inactive activity bar icons, and selected higher-contrast foregrounds for agent buttons and badges.
+- **Consistent palettes:** Applied the additions across Dark Focus, Day Light, and Night Warm using their existing color families.
 
-## Choose and install a theme
+## Preview
 
-Install [Relaxed Theme – Semantic Focus from the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=nomad-in-code.relaxed-theme-semantic-focus). Then open **Preferences: Color Theme** from the Command Palette and select one of:
+![Preview of Dark Focus, Day Light, and Night Warm](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/themes.gif)
 
-- Relaxed Theme - Dark Focus (Semantic)
-- Relaxed Theme - Day Light (Semantic)
-- Relaxed Theme - Night Warm (Semantic)
+## Install and select a theme
+
+Install [Relaxed Theme – Semantic Focus from the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=nomad-in-code.relaxed-theme-semantic-focus). Open **Preferences: Color Theme** from the Command Palette and choose one of:
+
+- **Relaxed Theme - Dark Focus (Semantic)** — neutral dusk tones with green focus cues.
+- **Relaxed Theme - Day Light (Semantic)** — a soft daylight base with cool blue accents.
+- **Relaxed Theme - Night Warm (Semantic)** — warm charcoal surfaces with amber accents.
 
 The extension requires VS Code `^1.140.0`.
 
 ## Features
 
-- **Semantic syntax colors** for functions, methods, parameters, properties, classes, interfaces, enums, namespaces, decorators, modifiers, and readonly values.
-- **Editor details** including bracket pair guides, selections, find and peek views, inlay hints, sticky scroll, minimap, and diff decorations.
-- **Workbench coverage** for tabs, editor groups, lists, menus, notifications, sidebars, panels, status bar, terminal, and chat.
-- **AI editing surfaces** for inline chat, agent sessions, ghost text, inserted and removed suggestions, and chat code blocks.
-- **Development tools** including settings controls, test states and coverage indicators, debugger icons, merge conflict views, and SCM graph history.
-- **Terminal ANSI palettes** coordinated with each theme's syntax and UI colors.
+- Semantic colors for functions, methods, parameters, properties, classes, interfaces, enums, namespaces, decorators, modifiers, and readonly values.
+- Editor colors for selections, find and peek views, bracket guides, inlay hints, sticky scroll, minimap, and diffs.
+- Workbench colors for tabs, editor groups, lists, menus, notifications, sidebars, panels, status bar, terminal, and modern floating surfaces.
+- AI editing colors for chat requests, inline chat, agent sessions, ghost text suggestions, inserted and removed edits, and code blocks.
+- Notebook colors for cells, outputs, focus and selection, execution indicators, and scrollbars.
+- Development surfaces for test results and coverage, debugger icons, merge conflicts, Settings UI, SCM graph history, and charts.
 
-The color IDs follow the [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color). Theme colors are additive: existing user color customizations can continue to override them.
+Theme color IDs follow the [VS Code Theme Color Reference](https://code.visualstudio.com/api/references/theme-color). User color customizations can continue to override theme colors.
+
+## Semantic highlighting
+
+Semantic highlighting is enabled in the theme files. VS Code's language support provides semantic tokens; install a language extension when one is needed. TypeScript and JavaScript support is built in. C# support is available through [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) or [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
+
+Each theme includes global semantic token defaults and language-specific overrides for TypeScript, JavaScript, C#, and Python. TextMate scopes also cover Python, YAML, JSON, Markdown, Dockerfile, and other grammars where available.
 
 ## Palette overview
 
@@ -46,17 +50,15 @@ The color IDs follow the [VS Code Theme Color Reference](https://code.visualstud
 | Day Light | `#f3f4f6` | `#2a2f37` | `#4b6b7d` | `#4b6b7d` | `#2f6d86` | `#7a4f7f` | `#4b7d53` | `#b03e34` |
 | Night Warm | `#2f3336` | `#e3e0dc` | `#cfa776` | `#d6b56f` | `#e0a46a` | `#c48573` | `#95ad63` | `#ce6f65` |
 
-These are representative palette colors. Each theme JSON contains the complete UI, editor, terminal, and syntax mapping.
+These are representative colors; the theme JSON files contain the complete mapping.
 
-## Semantic highlighting
+## Accessibility
 
-Semantic highlighting is enabled in the theme files. VS Code language support supplies semantic tokens; install the relevant language extension for the best results. TypeScript and JavaScript support is built in. C# support is available through [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) or [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp). Python, YAML, JSON, Markdown, Dockerfile, and other languages also receive TextMate scope colors where supported by their grammars.
+Input placeholder text and inactive activity bar icons use brighter secondary colors. Agent buttons and badges use foreground colors selected for contrast against their backgrounds. Checked contrast ratios for these specific text pairs exceed 4.5:1 in all three variants. This targeted check does not claim that every syntax or UI color pair meets WCAG thresholds.
 
-The themes provide global semantic token defaults and focused overrides for TypeScript, JavaScript, C#, and Python. For example, parameters and properties have TypeScript/JavaScript overrides, while interfaces and enum members have C# overrides. Global rules remain the fallback for other languages.
+### Terminal ANSI colors
 
-## Terminal colors
-
-| ANSI color | Dark Focus | Day Light | Night Warm |
+| Color | Dark Focus | Day Light | Night Warm |
 |---|---|---|---|
 | Black | `#151515` | `#4a4a4a` | `#151515` |
 | Red | `#c4776f` | `#b03e34` | `#ce6f65` |
@@ -71,7 +73,7 @@ The themes provide global semantic token defaults and focused overrides for Type
 
 ## Optional settings
 
-Enable the editor features used in the theme with settings like these:
+Enable editor features used by the themes with settings such as:
 
 ```json
 {
@@ -100,13 +102,9 @@ Overlay surfaces use varied transparency levels. To make selected Dark Focus sur
 
 Adjust the color bases for Day Light or Night Warm. The same alpha-channel override works for other semi-transparent theme colors.
 
-## Preview
-
-![Preview of the three Relaxed Theme variants](https://github.com/chaluvadis/relax-theme-semantic-focus/raw/HEAD/images/themes.gif)
-
 ## Contributing
 
-Issues and pull requests are welcome. Screenshots showing before and after are helpful for visual changes. Keep additions aligned with the existing palette and check the result in VS Code across light and dark surfaces.
+Issues and pull requests are welcome. Screenshots are helpful for visual changes. Keep additions aligned with the palette families and check them in VS Code across light and dark surfaces.
 
 ## Credits
 
