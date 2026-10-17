@@ -64,7 +64,10 @@ Starting with version 0.0.14, Relaxed Theme – Semantic Focus incorporates addi
 - `editorGroupHeader.tabsBorder`, `editorGroupHeader.border`, `editorGroup.border`, `editorGroup.dropBackground/emptyBackground/focusedEmptyBorder`, `editorPane.background`, `sideBySideEditor.horizontalBorder/verticalBorder`: editor group layout completeness.
 
 **Terminal**
-- `terminal.border`, `terminal.inactiveSelectionBackground`, `terminal.selectionForeground`, `terminal.findMatch*`, `terminal.hoverHighlightBackground`, `terminal.dropBackground`, `terminal.tab.activeBorder`, `terminal.initialHintForeground`, `terminalCommandGuide.foreground`, `terminalOverviewRuler.*`, `terminalStickyScroll.*`: complete terminal UI coloring.
+- `terminal.border`, `terminal.inactiveSelectionBackground`, `terminal.inactiveSelectionForeground`, `terminal.selectionForeground`, `terminal.findMatch*`, `terminal.hoverHighlightBackground/Border`, `terminal.dropBackground`, `terminal.tab.activeBorder`, `terminal.initialHintForeground`, `terminalCommandGuide.foreground`, `terminalOverviewRuler.*`, `terminalStickyScroll.*`: complete terminal UI coloring.
+
+**Chat / AI interface**
+- `chat.border/headerBackground/headerForeground`, `chat.input*`, `chat.placeholderForeground`, `chat.sendButton*`, `chat.assistantMessage*`, `chat.message*`, `chat.codeBlock*`, `chat.quickInput*`, `chat.slashCommand*`, `chat.mention*`, `chat.parameter*`: complete chat panel coloring for the Copilot / AI chat interface.
 
 ### Design Philosophy
 
@@ -82,7 +85,6 @@ All additions are additive. Existing customizations using the original color key
 ### What's Next
 
 Future versions will address:
-- Chat/AI interface colors (`chat.*` keys)
 - Merge editor (`mergeEditor.*` keys)
 - Testing UI (`testing.*` keys)
 - Debug icons (`debugIcon.*` keys)
